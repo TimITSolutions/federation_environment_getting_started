@@ -23,8 +23,8 @@ STEP 2:
     Copy the Mlflow Username and Password from the website into the below variables:
 
 """
-username = "VxAXt"
-password = "fXFzT7xsnh"
+username = "REPLACE_WITH_YOUR_USERNAME"
+password = "REPLACE_WITH_YOUR_PASSWORD"
 """
 
 STEP 3:

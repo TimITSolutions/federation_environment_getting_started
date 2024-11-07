@@ -16,7 +16,7 @@ The dataset in the federation environment is located under ```/mnt/dataset```.
 In order to test this code, perform the following steps:
 
 1. Login to your account on [fe.zgt.nl](fe.zgt.nl).
-2. Copy your auto-generated **username** and **password** into the ```main.py``` of this repository.
+2. Copy your auto-generated **username** and **password** into the ```main.py``` of this repository (line 26 and 27 in respectively).
 3. Commit your changes:
 ```bash
 git commit -am "added my own credentials"
