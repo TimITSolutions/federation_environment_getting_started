@@ -1,15 +1,28 @@
 # Reference code for submission to the federation environment.
 
+## This repository
+
+This respository fulfills three main purposes:
+
+1. The section [Requirements](#requirements) explains the basic requirements for the submitted sourcecode to the federation environment.
+
+2. The section [Getting Started](#getting-started) shows you how to export your code in the correct format.
+
+3. The section [Testing your own code](#testing-your-own-code) shows you how to set up a local environment, in which you can test if your code would work. Note: This step requires you to have a NVIDIA GPU in your system.
+
 ## Requirements
 
-There are a three simple conditions that need to be fulfilled for the submission to run successfully:
+There are a four simple conditions that need to be fulfilled for the submission to run successfully:
 
 1. The entrypoint of the code needs to be called ```main.py```.  
 2. A ```requirements.txt``` file needs to be provided.
 3. **Username** and **password** of the MLFLOW user must be included.
+4. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**. 
 5. The submission must be in ```zip``` format. 
 
 The dataset in the federation environment is located under ```/mnt/dataset```. 
+
+You can write logs or other data to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
 
 ## Getting started
 
@@ -33,39 +46,15 @@ Exporting the code via ```git``` might seem like unnecessary work, but ensures t
 
 As debugging submitted code becomes quite difficult, you can test on your local computer if your code is able to be evaluated.
 
-1. Download an ubuntu docker container, attach your ```submission.zip``` that you created earlier and open up a command line session:
+1. Place your ```submission.zip``` in ```docker_scripts/```.
 
+2. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+
+3. Execute the docker compose environement:
 ```bash
-# set up a docker container and attach your submission.zip file
-# update the path to your submission.zip accordingly
-docker run -ti -p 3001:3001 --mount type=bind,source=/path/to/submission.zip,target=/submission.zip --rm ubuntu /bin/bash
+docker compose up
 ```
 
-2. Now run the following commands:
+You can now observe the output of your submission in the terminal. 
 
-```bash
-# install dependencies
-apt update && apt install -y python3 python3-pip unzip ffmpeg libsm6 libxext6 git
-
-# install mlflow
-pip3 install mlflow --break-system-packages
-
-# unpack your submission
-unzip submission.zip
-
-pip3 install -r requirements.txt --break-system-packages
-
-# this will start the mlflow tracking server in the background
-mlflow server -p 3001 &
-
-# start your main file
-python3 main.py
-```
-
-**If you executed the above commands and you see output like this then it worked**:
-```bash
-[...]
-Created version '1' of model 'tracking-quickstart'.
-2024/11/07 17:41:30 INFO mlflow.tracking._tracking_service.client: 🏃 View run crawling-tern-354 at: http://localhost:3001/#/experiments/793410574682251178/runs/cd964aef0a1e4b68a32376ecbf0d9a8c.
-2024/11/07 17:41:30 INFO mlflow.tracking._tracking_service.client: 🧪 View experiment at: http://localhost:3001/#/experiments/793410574682251178.
-```
+You can also check the MLFLOW output in [localhost:3001](localhost:3001).
