@@ -1,0 +1,2 @@
+FROM python:3.11
+RUN pip install psycopg2-binary mlflow protobuf boto3 pymysql importlib-metadata
