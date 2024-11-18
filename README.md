@@ -31,7 +31,7 @@ You can write logs or other data to ```/mnt/export/```, a staff member can later
 
 As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform.
 
-1. For testing locally, the dataset path in your code should be your local path to [CLaM-sample](./datasets).
+1. For testing locally, the dataset path in your code should be your local path to [CLaM-sample](./datasets). **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
 2. Place your ```submission.zip``` in ```docker_scripts/```. 
 
@@ -65,6 +65,10 @@ git archive --format=zip --output submission.zip master
 Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct and the command will work on any platform (Windows, Linux, MacOS).
 
 ## Running our sample code
+We provide 3 sample scripts which you can refer to while preparing your code: 
+(1) Simple code on iris dataset
+(2) Case-level breast cancer model, ResNet34, that works on CLaM dataset
+(3) Case-level breast cancer model, ES-Att-Side, that works on CLaM dataset
 
 1. Clone the repository: https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access
 2. 
