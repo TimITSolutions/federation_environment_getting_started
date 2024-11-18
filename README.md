@@ -10,7 +10,9 @@ This respository fulfills three main purposes:
 
 3. The section [Testing your own code](#testing-your-own-code) shows you how to set up a local environment, in which you can test if your code would work. Note: This step requires you to have a NVIDIA GPU in your system.
 
-## Requirements
+## Running your own code
+
+### Requirements
 
 There are a four simple conditions that need to be fulfilled for the submission to run successfully:
 
@@ -24,7 +26,22 @@ The dataset in the federation environment is located under ```/mnt/dataset```.
 
 You can write logs or other data to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
 
-## Getting started
+### Testing your own code
+
+As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on fe.zgt.nl.
+
+1. Place your ```submission.zip``` in ```docker_scripts/```.
+
+2. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+
+3. Execute the docker compose environement:
+```bash
+docker compose up
+```
+
+You can now observe the output of your submission in the terminal. 
+
+### Submit your own to our model-to-data platform
 
 In order to test this code, perform the following steps:
 
@@ -42,24 +59,11 @@ git archive --format=zip --output submission.zip master
 
 Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct and the command will work on any platform (Windows, Linux, MacOS).
 
-## Testing your own code
 
-As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on fe.zgt.nl.
-
-1. Place your ```submission.zip``` in ```docker_scripts/```.
-
-2. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
-
-3. Execute the docker compose environement:
-```bash
-docker compose up
-```
-
-You can now observe the output of your submission in the terminal. 
 
 You can also check the MLFLOW output in [localhost:3001](localhost:3001).
 
-## Testing our sample code on breast cancer prediction
+## Running our sample code
 
 1. Clone the repository: https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access
 2. 
