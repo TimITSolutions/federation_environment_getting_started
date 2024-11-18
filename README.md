@@ -29,7 +29,7 @@ You can write logs or other data to ```/mnt/export/```, a staff member can later
 
 ### Testing your code locally
 
-As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on fe.zgt.nl.
+As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform.
 
 1. For testing locally, the dataset path in your code should be your local path to [CLaM-sample](./datasets).
 
