@@ -30,11 +30,12 @@ You can write logs or other data to ```/mnt/export/```, a staff member can later
 
 As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on fe.zgt.nl.
 
-1. Place your ```submission.zip``` in ```docker_scripts/```.
+1. We provide a [sample of our CLaM dataset](./datasets) in this repository.
+2. Place your ```submission.zip``` in ```docker_scripts/```.
 
-2. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+3. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
 
-3. Execute the docker compose environement:
+4. Execute the docker compose environement:
 ```bash
 docker compose up
 ```
