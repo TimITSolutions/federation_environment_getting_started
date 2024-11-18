@@ -65,8 +65,7 @@ git archive --format=zip --output submission.zip master
 Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct and the command will work on any platform (Windows, Linux, MacOS).
 
 ## Running our sample code
-We provide 3 sample code to test locally and on our platform. You can also refer to while preparing your code. </br> 
-Follow [Testing your code locally](./README.md#testing-your-code-locally) to test locally and [Submit your code to our platform](./README.md#submit-your-code-to-our-platform) to test on our platform. </br>
+We provide 3 sample code to [test locally](./README.md#testing-your-code-locally) or [on our platform](./README.md#submit-your-code-to-our-platform). You can also refer to while preparing your code. </br> 
 
 (1) Simple code on iris dataset </br>
 
