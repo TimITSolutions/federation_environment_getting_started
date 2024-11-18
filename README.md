@@ -44,7 +44,7 @@ Exporting the code via ```git``` might seem like unnecessary work, but ensures t
 
 ## Testing your own code
 
-As debugging submitted code becomes quite difficult, you can test on your local computer if your code is able to be evaluated.
+As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on fe.zgt.nl.
 
 1. Place your ```submission.zip``` in ```docker_scripts/```.
 
@@ -58,3 +58,8 @@ docker compose up
 You can now observe the output of your submission in the terminal. 
 
 You can also check the MLFLOW output in [localhost:3001](localhost:3001).
+
+## Testing our sample code on breast cancer prediction
+
+1. Clone the repository: https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access
+2. 
