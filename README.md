@@ -10,7 +10,7 @@ This respository fulfills three main purposes:
 
 3. The section [Testing your own code](#testing-your-own-code) shows you how to set up a local environment, in which you can test if your code would work. Note: This step requires you to have a NVIDIA GPU in your system.
 
-## Running your own code on our platform
+## Running your own code on our model-to-data platform
 
 ### Prepare your code
 
@@ -46,7 +46,7 @@ You can now observe the output of your submission in the terminal.
 
 You can also check the MLFLOW output in [localhost:3001](localhost:3001).
 
-### Submit your code to our model-to-data platform
+### Submit your code to our platform
 
 In order to test this code, perform the following steps:
 
