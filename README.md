@@ -65,10 +65,10 @@ git archive --format=zip --output submission.zip master
 Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct and the command will work on any platform (Windows, Linux, MacOS).
 
 ## Running our sample code
-We provide 3 sample code which you can refer to while preparing your code: <\br> 
-(1) Simple code on iris dataset <\br>
-(2) Case-level breast cancer model, ResNet34, that works on CLaM dataset <\br>
-(3) Case-level breast cancer model, ES-Att-Side, that works on CLaM dataset <\br>
+We provide 3 sample code which you can refer to while preparing your code: </br> 
+(1) Simple code on iris dataset </br>
+(2) Case-level breast cancer model, ResNet34, that works on CLaM dataset </br>
+(3) Case-level breast cancer model, ES-Att-Side, that works on CLaM dataset </br>
 
 1. Clone the repository: https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access
 2. 
