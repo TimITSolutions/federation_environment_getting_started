@@ -1,4 +1,4 @@
-# Reference code for submission to the federation environment.
+# Reference code for submission to our model-to-data platform.
 
 ## This repository
 
@@ -10,7 +10,7 @@ This respository fulfills three main purposes:
 
 3. The section [Testing your own code](#testing-your-own-code) shows you how to set up a local environment, in which you can test if your code would work. Note: This step requires you to have a NVIDIA GPU in your system.
 
-## Running your own code
+## Running your own code on our platform
 
 ### Requirements
 
@@ -26,16 +26,19 @@ The dataset in the federation environment is located under ```/mnt/dataset```.
 
 You can write logs or other data to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
 
-### Testing your own code
+### Testing your own code locally
 
 As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on fe.zgt.nl.
 
-1. We provide a [sample of our CLaM dataset](./datasets) in this repository.
-2. Place your ```submission.zip``` in ```docker_scripts/```.
+1. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code. 
 
-3. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+2. For testing locally, the dataset path in your code should be your local path to CLaM-sample.
 
-4. Execute the docker compose environement:
+3. Place your ```submission.zip``` in ```docker_scripts/```. 
+
+4. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+
+5. Execute the docker compose environement:
 ```bash
 docker compose up
 ```
