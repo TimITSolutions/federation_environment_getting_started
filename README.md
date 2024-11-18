@@ -67,7 +67,7 @@ Exporting the code via ```git``` might seem like unnecessary work, but ensures t
 ## Running our sample code
 We provide 3 sample code to [test locally](./README.md#testing-your-code-locally) or [on our platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
 
-(1) Simple code on iris dataset </br>
+(1) [Simple code on iris dataset](./sample_code/simple-code-iris-data) </br>
 
 (2) Case-level breast cancer model, ResNet34, that works on CLaM dataset. Code in our jupyter notebook, containing sample data loading and model training script. </br>
 
