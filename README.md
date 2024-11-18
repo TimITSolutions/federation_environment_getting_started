@@ -12,7 +12,7 @@ This respository fulfills three main purposes:
 
 ## Running your own code on our model-to-data platform
 
-### Prepare your code
+### Prepare your code for the platform
 
 There are a four simple conditions that need to be fulfilled for the submission to run successfully:
 
@@ -31,7 +31,7 @@ You can write logs or other data to ```/mnt/export/```, a staff member can later
 
 As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform.
 
-1. For testing locally, the dataset path in your code should be your local path to [CLaM-sample](./datasets). **Username** and **password** of the MLFLOW user is not needed for testing locally.
+1. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
 2. Place your ```submission.zip``` in ```docker_scripts/```. 
 
@@ -66,9 +66,9 @@ Exporting the code via ```git``` might seem like unnecessary work, but ensures t
 
 ## Running our sample code
 We provide 3 sample code to test locally and on our platform. You can also refer to while preparing your code. </br> 
+Follow ```Testing your code locally``` to test locally and ```Submit your code to our platform``` to test on our platform. </br>
 (1) Simple code on iris dataset </br>
-(2) Case-level breast cancer model, ResNet34, that works on CLaM dataset </br>
-(3) Case-level breast cancer model, ES-Att-Side, that works on CLaM dataset </br>
 
-1. Clone the repository: https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access
-2. 
+(2) Case-level breast cancer model, ResNet34, that works on CLaM dataset. Code in our jupyter notebook, containing sample data loading and model training script. </br>
+
+(3) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. Clone the repository to get started.
