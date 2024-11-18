@@ -27,7 +27,7 @@ The dataset in the federation environment is located under ```/mnt/dataset```.
 
 You can write logs or other data to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
 
-### Testing your own code locally
+### Testing your code locally
 
 As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on fe.zgt.nl.
 
@@ -44,7 +44,9 @@ docker compose up
 
 You can now observe the output of your submission in the terminal. 
 
-### Submit your own code to our model-to-data platform
+You can also check the MLFLOW output in [localhost:3001](localhost:3001).
+
+### Submit your code to our model-to-data platform
 
 In order to test this code, perform the following steps:
 
@@ -61,10 +63,6 @@ git archive --format=zip --output submission.zip master
 5. Upload the code to [fe.zgt.nl](fe.zgt.nl) and wait for results to become visible in [mlflow.zgt.nl](mlflow.zgt.nl).
 
 Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct and the command will work on any platform (Windows, Linux, MacOS).
-
-
-
-You can also check the MLFLOW output in [localhost:3001](localhost:3001).
 
 ## Running our sample code
 
