@@ -12,7 +12,7 @@ This respository fulfills three main purposes:
 
 ## Running your own code on our platform
 
-### Requirements
+### Prepare your code
 
 There are a four simple conditions that need to be fulfilled for the submission to run successfully:
 
@@ -20,7 +20,8 @@ There are a four simple conditions that need to be fulfilled for the submission 
 2. A ```requirements.txt``` file needs to be provided.
 3. **Username** and **password** of the MLFLOW user must be included.
 4. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**. 
-5. The submission must be in ```zip``` format. 
+5. The submission must be in ```zip``` format.
+6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code. 
 
 The dataset in the federation environment is located under ```/mnt/dataset```. 
 
@@ -30,22 +31,20 @@ You can write logs or other data to ```/mnt/export/```, a staff member can later
 
 As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on fe.zgt.nl.
 
-1. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code. 
+1. For testing locally, the dataset path in your code should be your local path to [CLaM-sample](./datasets).
 
-2. For testing locally, the dataset path in your code should be your local path to CLaM-sample.
+2. Place your ```submission.zip``` in ```docker_scripts/```. 
 
-3. Place your ```submission.zip``` in ```docker_scripts/```. 
+3. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
 
-4. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
-
-5. Execute the docker compose environement:
+4. Execute the docker compose environement:
 ```bash
 docker compose up
 ```
 
 You can now observe the output of your submission in the terminal. 
 
-### Submit your own to our model-to-data platform
+### Submit your own code to our model-to-data platform
 
 In order to test this code, perform the following steps:
 
