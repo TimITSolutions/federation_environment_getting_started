@@ -4,11 +4,11 @@
 
 This respository fulfills three main purposes:
 
-1. The section [Requirements](#requirements) explains the basic requirements for the submitted sourcecode to the federation environment.
+1. The section [Running your own code on our model-to-data platform](#running-your-own-code-on-our-model-to-data-platform) describes, i) how to prepare your code to submit to our platform, ii) how to set up a local environment, in which you can test if your code would work on our platform, and iii) how to submit your code to our platform. 
 
-2. The section [Getting Started](#getting-started) shows you how to export your code in the correct format.
+2. The section [Running our sample code](#running-our-sample-code) contains 2 code - one simple code on iris dataset and one for a case-level breast cancer model that works on CLaM dataset. You can test these code on our platform and refer to these while preparing your code.
 
-3. The section [Testing your own code](#testing-your-own-code) shows you how to set up a local environment, in which you can test if your code would work. Note: This step requires you to have a NVIDIA GPU in your system.
+3. The section [Additional Information](#additional-information) provides information on how to setup docker on windows and ubuntu. 
 
 ## Running your own code on our model-to-data platform
 
@@ -29,7 +29,7 @@ You can write logs or other data to ```/mnt/export/```, a staff member can later
 
 ### Testing your code locally
 
-As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform.
+As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform. Note: This step requires you to have a NVIDIA GPU in your system
 
 1. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
