@@ -1,4 +1,4 @@
-# Documentation for submission to our model-to-data platform.
+# Instructions for submission to our model-to-data platform.
 
 ## About this repository
 
