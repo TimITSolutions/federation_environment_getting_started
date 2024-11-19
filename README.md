@@ -65,8 +65,8 @@ git archive --format=zip --output submission.zip master
 Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct and the command will work on any platform (Windows, Linux, MacOS).
 
 ## Running our sample code
-We provide 3 sample code to test [locally](./README.md#testing-your-code-locally) or [on our platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
+We provide 2 sample code to test [locally](./README.md#testing-your-code-locally) or [on our platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
 
-(1) [Simple code on iris dataset](./sample_code/simple-code-iris-data) </br>
+(1) [Simple code on iris dataset](./sample_code) </br>
 
 (2) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. Clone the repository and get started.
