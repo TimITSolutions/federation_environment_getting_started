@@ -76,7 +76,8 @@ We provide 2 sample code to test [locally](./README.md#testing-your-code-locally
 ### Setup docker on windows
 For testing your code locally, you need to have docker setup on your machine. Below are the steps we followed to set it up on windows.</br>
 
-Install docker for Windows 11 Enterprise: </br>
+Install docker for Windows 11 Enterprise: 
+
 	1. Install [docker desktop for windows]( https://docs.docker.com/desktop/install/windows-install/). <br/>
 	2. Command in PowerShell: Start-Process 'Docker Desktop Installer.exe' -Wait install <br/>
 	3. When prompted, ensure the Use WSL 2 instead of Hyper-V option on the Configuration page is selected or not depending on your choice of backend. We used WSL-2. <br/>
