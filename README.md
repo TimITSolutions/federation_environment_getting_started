@@ -93,14 +93,14 @@ If your account is different from admin account, give permissions to docker:
 	5. Click on add-> advanced -> find now. <br/>
 	6. Then click on your user account from the search result. We had to select authenticated users from the list. <br/>
 	7. Click Apply and ok. <br/>
-You can check users in docker group through: ```net user``` or ```Get-LocalUser```. </br>
+        8. You can check users in docker group through: ```net user``` or ```Get-LocalUser```. 
 
 Start docker desktop 
 
-	1. Search docker desktop on the search bar </br>
-	2. If the permissions for your user account are correct, then clicking on docker desktop will open the app, otherwise it will not open. </br>
-	3. Accept docker subscription service agreement. </br>
-	4. Create an account if you don't have one. While creating an account, note that all letters should be small in username (otherwise it will show invalid format). </br>
-	5. After creating, login with your username and password. If you login with your email address and password, then when running step 6, it will show "unauthorized: incorrect username or password". To resolve this, log out and login correctly again with your username and not email address. Also, do this in PowerShell: docker login --username your-username. Then, step 6 should work correctly. </br>
-	6. Go to powershell and type: ```docker run hello-world```. If this shows hello-world, then docker is successfully installed in your machine. </br>
+	1. Search docker desktop on the search bar. 
+	2. If the permissions for your user account are correct, then clicking on docker desktop will open the app, otherwise it will not open. 
+	3. Accept docker subscription service agreement. 
+	4. Create an account if you don't have one. While creating an account, note that all letters should be small in username (otherwise it will show invalid format). 
+	5. After creating, login with your username and password. If you login with your email address and password, then when running step 6, it will show "unauthorized: incorrect username or password". To resolve this, log out and login correctly again with your username and not email address. Also, do this in PowerShell: docker login --username your-username. Then, step 6 should work correctly. 
+	6. Go to powershell and type: ```docker run hello-world```. If this shows hello-world, then docker is successfully installed in your machine. 
 
