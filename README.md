@@ -93,7 +93,7 @@ If your account is different from admin account, give permissions to docker:
 	5. Click on add-> advanced -> find now. 
 	6. Then click on your user account from the search result. We had to select authenticated users from the list. 
 	7. Click Apply and ok.
- 8. You can check users in docker group through these commands in PowerShell: net user or Get-LocalUser. 
+    8. You can check users in docker group through these commands in PowerShell: net user or Get-LocalUser. 
 
 Start docker desktop 
 
