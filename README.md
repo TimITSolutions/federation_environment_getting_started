@@ -84,7 +84,8 @@ Install docker for Windows 11 Enterprise:
 	4. Check if docker is installed successfully: docker --version <br/>
 	5. The system may be restarted or need to be restarted after this. <br/>
 
-If your account is different from admin account, give permissions to docker: <br/>
+If your account is different from admin account, give permissions to docker:
+
 	1. Go to computer management (from search) and run as administrator. <br/>
 	2. Go to local users and groups node. <br/>
 	3. Click on groups folder. <br/>
@@ -94,7 +95,8 @@ If your account is different from admin account, give permissions to docker: <br
 	7. Click Apply and ok. <br/>
 You can check users in docker group through: ```net user``` or ```Get-LocalUser```. </br>
 
-Start docker desktop </br>
+Start docker desktop 
+
 	1. Search docker desktop on the search bar </br>
 	2. If the permissions for your user account are correct, then clicking on docker desktop will open the app, otherwise it will not open. </br>
 	3. Accept docker subscription service agreement. </br>
