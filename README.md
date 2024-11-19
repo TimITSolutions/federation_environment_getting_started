@@ -1,4 +1,6 @@
-# Instructions for submission to our model-to-data platform.
+# Our model-to-data platform and instructions on how to use it.
+We developed a model-to-data platform to provide users worldwide access to our mammography dataset, CLaM, in a privacy preserving manner. The dataset is collected from Ziekenhuis Groep Twente (ZGT), The Netherlands. Through our model-to-data platform, users can send their artificially intelligent (AI) model script for training on our mammography dataset. The mammography dataset stays within the hospital and users cannot download or see the dataset. The users only get back the model’s performance on our dataset when the training is complete and can also get the trained model on request. Thus, instead of bringing the data to the model, we bring the model to the data.
+
 
 ## About this repository
 
@@ -9,6 +11,9 @@ This respository fulfills three main purposes:
 2. The section [Running our sample code](#running-our-sample-code) contains 2 code - one simple code on iris dataset and one for a case-level breast cancer model that works on CLaM dataset. You can test these code on our platform and refer to these while preparing your code.
 
 3. The section [Additional Information](#additional-information) provides information on how to setup docker on windows and ubuntu. 
+
+## CLaM Dataset
+Our complete CLaM dataset is stored in Ziekenhuis groep Twente (ZGT), The Netherlands.  
 
 ## Running your own code on our model-to-data platform
 
@@ -30,6 +35,8 @@ You can write logs or other data to ```/mnt/export/```, a staff member can later
 ### Testing your code locally
 
 As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform. Note: This step requires you to have a NVIDIA GPU in your system
+
+Before you can follow the steps below, you need to have docker setup locally. Refer to [Additional Information](#additional-information) to setup docker. 
 
 1. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
