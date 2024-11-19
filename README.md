@@ -1,6 +1,6 @@
 # Reference code for submission to our model-to-data platform.
 
-## This repository
+## About this repository
 
 This respository fulfills three main purposes:
 
