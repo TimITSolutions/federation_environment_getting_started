@@ -1,4 +1,4 @@
-# Reference code for submission to our model-to-data platform.
+# Documentation for submission to our model-to-data platform.
 
 ## About this repository
 
