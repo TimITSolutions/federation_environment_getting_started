@@ -69,6 +69,4 @@ We provide 3 sample code to test [locally](./README.md#testing-your-code-locally
 
 (1) [Simple code on iris dataset](./sample_code/simple-code-iris-data) </br>
 
-(2) Case-level breast cancer model, ResNet34, that works on CLaM dataset. Code in our jupyter notebook, containing sample data loading and model training script. </br>
-
-(3) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. Clone the repository to get started.
+(2) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. Clone the repository and get started.
