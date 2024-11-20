@@ -1,5 +1,5 @@
 # Our model-to-data platform and instructions on how to use it
-We developed a model-to-data platform to provide users worldwide access to our mammography dataset, CLaM, in a privacy preserving manner. The dataset is collected from Ziekenhuis Groep Twente (ZGT), The Netherlands. Through our model-to-data platform, users can send their artificially intelligent (AI) model script for training on our mammography dataset. The mammography dataset stays within the hospital and users cannot download or see the dataset. The users only get back the model’s performance on our dataset when the training is complete and can also get the trained model on request. Thus, instead of bringing the data to the model, we bring the model to the data.
+We developed a [model-to-data platform](fe.zgt.nl) to provide users worldwide access to our mammography dataset, CLaM, in a privacy preserving manner. The dataset is collected from Ziekenhuis Groep Twente (ZGT), The Netherlands. Through our model-to-data platform, users can send their artificially intelligent (AI) model script for training on our mammography dataset. The mammography dataset stays within the hospital and users cannot download or see the dataset. The users only get back the model’s performance on our dataset when the training is complete and can also get the trained model on request. Thus, instead of bringing the data to the model, we bring the model to the data.
 
 
 ## About this repository
@@ -13,7 +13,10 @@ This respository fulfills three main purposes:
 3. The section [Additional Information](#additional-information) provides information on how to setup docker on windows and ubuntu. 
 
 ## CLaM Dataset
-Our complete CLaM dataset is stored in Ziekenhuis groep Twente (ZGT), The Netherlands.  
+Our complete CLaM dataset is stored in Ziekenhuis groep Twente (ZGT), The Netherlands. The dataset is not downloadable, but can be used for training AI models through our [platform](fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
+We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the dataset. Description of CLaM-sample is as follows:
+
+1. It contains 10 patients, P01-S1, 
 
 ## Running your own code on our model-to-data platform
 
