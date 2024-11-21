@@ -13,10 +13,8 @@ This respository fulfills three main purposes:
 3. The section [Additional Information](#additional-information) provides information on how to setup docker on windows and ubuntu. 
 
 ## CLaM Dataset
-<ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset is a dataset containing mammography exams from Ziekenhuis Groep Twente, The Netherlands taken between 2013 to 2020. Our complete CLaM dataset is stored in Ziekenhuis groep Twente (ZGT), The Netherlands. The dataset is not downloadable, but can be used for training AI models through our [platform](fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
-We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the dataset. Description of CLaM-sample is as follows:
-
-1. It contains 10 patients, P01-S1, 
+<ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
+We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the dataset. CLaM-sample contains 10 cases or mammography exams (S01-A01, S02-A02, ..) from 10 patients (P01, P02, ...). A mammography case contains images from standard views - LMLO, LCC, RMLO and RCC and can also contain additional views - LXCCL, RXCCL, LLM, RLM, LML, RML. Each image folder, e.g. S01-A01/LMLO contains 2 images - 8.png (image in 8 bit) and 16.png (image in 16 bit).
 
 ## Running your own code on our model-to-data platform
 
