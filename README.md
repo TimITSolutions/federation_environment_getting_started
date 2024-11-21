@@ -13,7 +13,7 @@ This respository fulfills three main purposes:
 3. The section [Additional Information](#additional-information) provides information on how to setup docker on windows and ubuntu. 
 
 ## CLaM Dataset
-<ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset is a mammography dataset collected from Ziekenhuis Groep Twente, The Netherlands containing exams taken between 2013 to 2020. Our complete CLaM dataset is stored in Ziekenhuis groep Twente (ZGT), The Netherlands. The dataset is not downloadable, but can be used for training AI models through our [platform](fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
+<ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset is a dataset containing mammography exams from Ziekenhuis Groep Twente, The Netherlands taken between 2013 to 2020. Our complete CLaM dataset is stored in Ziekenhuis groep Twente (ZGT), The Netherlands. The dataset is not downloadable, but can be used for training AI models through our [platform](fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
 We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the dataset. Description of CLaM-sample is as follows:
 
 1. It contains 10 patients, P01-S1, 
