@@ -35,7 +35,7 @@ You can write logs, other data and save trained models to ```/mnt/export/```, a 
 
 ### Testing your code locally
 
-As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform. Note: This step requires you to have a NVIDIA GPU in your system
+As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform. Note: This step requires you to have a NVIDIA GPU in your system.
 
 Before you can follow the steps below, you need to have docker setup locally. Refer to [Additional Information](#additional-information) to setup docker. 
 
