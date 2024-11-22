@@ -29,7 +29,7 @@ There are a four simple conditions that need to be fulfilled for the submission 
 5. The submission must be in ```zip``` format.
 6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code. 
 
-The dataset in the federation environment is located under ```/mnt/dataset```. 
+The dataset in the model-to-data platform is located under ```/mnt/dataset```. 
 
 You can write logs or other data to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
 
