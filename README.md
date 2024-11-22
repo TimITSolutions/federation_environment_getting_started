@@ -31,7 +31,7 @@ There are a four simple conditions that need to be fulfilled for the submission 
 
 The dataset in the model-to-data platform is located under ```/mnt/dataset```. 
 
-You can write logs or other data to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
+You can write logs, other data and save trained models to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
 
 ### Testing your code locally
 
