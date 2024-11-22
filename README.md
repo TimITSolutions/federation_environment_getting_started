@@ -41,7 +41,7 @@ Before you can follow the steps below, you need to have docker setup locally. Re
 
 1. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
-2. MLFLOW output can be checked through [localhost:3001](localhost:3001).
+2. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add this to your code.
 
 3. Place your ```submission.zip``` in ```docker_scripts/```. 
 
