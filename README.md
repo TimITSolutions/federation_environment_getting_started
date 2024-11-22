@@ -41,18 +41,18 @@ Before you can follow the steps below, you need to have docker setup locally. Re
 
 1. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
-2. Place your ```submission.zip``` in ```docker_scripts/```. 
+2. MLFLOW output can be checked through [localhost:3001](localhost:3001).
 
-3. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+3. Place your ```submission.zip``` in ```docker_scripts/```. 
 
-4. Execute the docker compose environement:
+4. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+
+5. Execute the docker compose environement:
 ```bash
 docker compose up
 ```
 
 You can now observe the output of your submission in the terminal. 
-
-You can also check the MLFLOW output in [localhost:3001](localhost:3001).
 
 ### Submit your code to our platform
 
