@@ -23,12 +23,12 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
-    command: python3 /main.py
+    command: python3 main.py
     depends_on:
       - mlflow-server
     volumes:
       - export:/mnt/export/
-      - /dataset:/mnt/dataset/
+      - '/home/datasets:/mnt/dataset/' #replace the left side of the colon with your local path to the CLaM dataset, e.g. if your local path is: /home/datasets/CLaM-sample, then use /home/datasets
 
 volumes:
   export:
