@@ -13,10 +13,8 @@ This respository fulfills three main purposes:
 3. The section [Additional Information](#additional-information) provides information on how to setup docker on windows and ubuntu. 
 
 ## CLaM Dataset
-Our complete CLaM dataset is stored in Ziekenhuis groep Twente (ZGT), The Netherlands. The dataset is not downloadable, but can be used for training AI models through our [platform](fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
-We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the dataset. Description of CLaM-sample is as follows:
-
-1. It contains 10 patients, P01-S1, 
+<ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
+We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the dataset. CLaM-sample contains 10 cases or mammography exams (S01-A01, S02-A02, ..) from 10 patients (P01, P02, ...). A mammography case contains images from standard views - LMLO, LCC, RMLO and RCC and can also contain additional views - LXCCL, RXCCL, LLM, RLM, LML, RML. Each image folder, e.g. S01-A01/LMLO contains 2 images - 8.png (image in 8 bit) and 16.png (image in 16 bit). The [datasets](./datasets) folder also contains csv files with the list of the cases and their corresponding diagnosis of malignant or benign. 
 
 ## Running your own code on our model-to-data platform
 
@@ -31,30 +29,30 @@ There are a four simple conditions that need to be fulfilled for the submission 
 5. The submission must be in ```zip``` format.
 6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code. 
 
-The dataset in the federation environment is located under ```/mnt/dataset```. 
+The dataset in the model-to-data platform is located under ```/mnt/dataset```. 
 
-You can write logs or other data to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
+You can write logs, other data and save trained models to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
 
 ### Testing your code locally
 
-As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform. Note: This step requires you to have a NVIDIA GPU in your system
+As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform. Note: This step requires you to have a NVIDIA GPU in your system.
 
 Before you can follow the steps below, you need to have docker setup locally. Refer to [Additional Information](#additional-information) to setup docker. 
 
 1. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
-2. Place your ```submission.zip``` in ```docker_scripts/```. 
+2. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your code.
 
-3. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+3. Place your ```submission.zip``` in ```docker_scripts/```. 
 
-4. Execute the docker compose environement:
+4. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+
+5. Execute the docker compose environement:
 ```bash
 docker compose up
 ```
 
 You can now observe the output of your submission in the terminal. 
-
-You can also check the MLFLOW output in [localhost:3001](localhost:3001).
 
 ### Submit your code to our platform
 
