@@ -47,7 +47,7 @@ Before you can follow the steps below, you need to have docker setup locally. Re
 
 4. Place your ```submission.zip``` in ```docker_scripts/```. 
 
-5. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+5. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) in order to run containers with GPU acceleration
 
 6. Execute the docker compose environement:
 ```bash
