@@ -16,6 +16,8 @@ This respository fulfills three main purposes:
 <ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
 We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the dataset. CLaM-sample contains 10 cases or mammography exams (S01-A01, S02-A02, ..) from 10 patients (P01, P02, ...). A mammography case contains images from standard views - LMLO, LCC, RMLO and RCC and can also contain additional views - LXCCL, RXCCL, LLM, RLM, LML, RML. Each image folder, e.g. S01-A01/LMLO contains 2 images - 8.png (image in 8 bit) and 16.png (image in 16 bit). The [datasets](./datasets) folder also contains csv files with the list of the cases and their corresponding diagnosis of malignant or benign. 
 
+The CLaM dataset stored in fe.zgt.nl reflects a similar structure and can be accessed similarly.
+
 ## Running your own code on our model-to-data platform
 
 ### Prepare your code for the platform
@@ -29,7 +31,7 @@ There are a four simple conditions that need to be fulfilled for the submission 
 5. The submission must be in ```zip``` format.
 6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code. 
 
-The dataset in the model-to-data platform is located under ```/mnt/dataset```. 
+The dataset in the model-to-data platform is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-SI.csv```.   
 
 You can write logs, other data and save trained models to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
 
@@ -43,11 +45,13 @@ Before you can follow the steps below, you need to have docker setup locally. Re
 
 2. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your code.
 
-3. Place your ```submission.zip``` in ```docker_scripts/```. 
+3. In docker-compose.yaml under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
 
-4. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+4. Place your ```submission.zip``` in ```docker_scripts/```. 
 
-5. Execute the docker compose environement:
+5. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) in order to run containers with GPU acceleration
+
+6. Execute the docker compose environement:
 ```bash
 docker compose up
 ```
@@ -86,7 +90,7 @@ For testing your code locally, you need to have docker setup on your machine. Be
 
 Install docker for Windows 11 Enterprise: 
 
-	1. Install [docker desktop for windows]( https://docs.docker.com/desktop/install/windows-install/). 
+	1. Install docker desktop for windows at https://docs.docker.com/desktop/install/windows-install/. 
 	2. Command in PowerShell: Start-Process 'Docker Desktop Installer.exe' -Wait install 
 	3. When prompted, ensure the Use WSL 2 instead of Hyper-V option on the Configuration page is selected or not depending on your choice of backend. We used WSL-2. 
 	4. Check if docker is installed successfully: docker --version 
