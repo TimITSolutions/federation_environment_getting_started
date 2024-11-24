@@ -43,7 +43,7 @@ Before you can follow the steps below, you need to have docker setup locally. Re
 
 2. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your code.
 
-3. In docker-compose.yaml under volumes, change ```/home/datasets``` to your local path of [datasets folder](./datasets).
+3. In docker-compose.yaml under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
 
 4. Place your ```submission.zip``` in ```docker_scripts/```. 
 
