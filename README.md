@@ -82,6 +82,8 @@ We provide 2 sample code to test [locally](./README.md#testing-your-code-locally
 (1) [Simple code on iris dataset](./sample_code) </br>
 
 (2) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. Clone the repository and get started.
+- replace run1 by run2 in lines 61, 94 and 100.
+- for a quick check with a subset of CLaM dataset, uncomment lines 295, 297, 298. 
 
 ## Additional Information
 
