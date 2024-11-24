@@ -88,7 +88,7 @@ For testing your code locally, you need to have docker setup on your machine. Be
 
 Install docker for Windows 11 Enterprise: 
 
-	1. Install [docker desktop for windows]( https://docs.docker.com/desktop/install/windows-install/). 
+	1. Install docker desktop for windows at https://docs.docker.com/desktop/install/windows-install/. 
 	2. Command in PowerShell: Start-Process 'Docker Desktop Installer.exe' -Wait install 
 	3. When prompted, ensure the Use WSL 2 instead of Hyper-V option on the Configuration page is selected or not depending on your choice of backend. We used WSL-2. 
 	4. Check if docker is installed successfully: docker --version 
