@@ -31,7 +31,7 @@ There are a four simple conditions that need to be fulfilled for the submission 
 5. The submission must be in ```zip``` format.
 6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code. 
 
-The dataset in the model-to-data platform is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-SI.csv```.   
+The dataset in the model-to-data platform is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.   
 
 You can write logs, other data and save trained models to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
 
