@@ -43,11 +43,13 @@ Before you can follow the steps below, you need to have docker setup locally. Re
 
 2. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your code.
 
-3. Place your ```submission.zip``` in ```docker_scripts/```. 
+3. In docker-compose.yaml under volumes, change ```/home/datasets``` to your local path of [datasets folder](./datasets).
 
-4. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+4. Place your ```submission.zip``` in ```docker_scripts/```. 
 
-5. Execute the docker compose environement:
+5. Set up the [Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) in order to run containers with GPU acceleration
+
+6. Execute the docker compose environement:
 ```bash
 docker compose up
 ```
