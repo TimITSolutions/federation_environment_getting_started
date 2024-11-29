@@ -43,7 +43,7 @@ Before you can follow the steps below, you need to have docker setup locally. Re
 
 1. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
-2. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your code.
+2. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your ```main.py```.
 
 3. In docker-compose.yaml under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
 
@@ -56,14 +56,14 @@ Before you can follow the steps below, you need to have docker setup locally. Re
 docker compose up
 ```
 
-You can now observe the output of your submission in the terminal. 
+You can now observe the output of your submission in the terminal and view your results in mlflow through ```http://localhost:3001/```. 
 
 ### Submit your code to our platform
 
 In order to test this code, perform the following steps:
 
-1. Login to your account on [fe.zgt.nl](fe.zgt.nl) or Sign Up if you don't have any account. An admin will approve your request after review.
-2. Copy your auto-generated **username** and **password** into the ```main.py``` (e.g. line 26 and 27 in the main.py of the [sample code](./sample_code)).
+1. Login to your account on [fe.zgt.nl](fe.zgt.nl) or sign up if you don't have any account. An admin will approve your request after review.
+2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 in the main.py of the [sample code](./sample_code)).
 3. Commit your changes:
 ```bash
 git commit -am "added my own credentials"
@@ -74,7 +74,7 @@ git archive --format=zip --output submission.zip master
 ```
 5. Upload the code to [fe.zgt.nl](fe.zgt.nl) and wait for results to become visible in [mlflow.zgt.nl](mlflow.zgt.nl).
 
-Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct and the command will work on any platform (Windows, Linux, MacOS).
+Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct (i.e. submission.zip should directly contain the files under it) and the command will work on any platform (Windows, Linux, MacOS). 
 
 ## Running our sample code
 We provide 2 sample code to test [locally](./README.md#testing-your-code-locally) or [on our platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
