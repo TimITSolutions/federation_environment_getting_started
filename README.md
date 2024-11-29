@@ -62,7 +62,7 @@ You can now observe the output of your submission in the terminal.
 
 In order to test this code, perform the following steps:
 
-1. Login to your account on [fe.zgt.nl](fe.zgt.nl).
+1. Login to your account on [fe.zgt.nl](fe.zgt.nl) or Sign Up if you don't have any account. An admin will approve your request after review.
 2. Copy your auto-generated **username** and **password** into the ```main.py``` (e.g. line 26 and 27 in the main.py of the [sample code](./sample_code)).
 3. Commit your changes:
 ```bash
