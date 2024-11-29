@@ -41,17 +41,19 @@ As debugging submitted code becomes quite difficult, you can test on your local 
 
 Before you can follow the steps below, you need to have docker setup locally. Refer to [Additional Information](#additional-information) to setup docker. 
 
-1. **Username** and **password** of the MLFLOW user is not needed for testing locally.
+1. Install [docker](#additional-information).
 
-2. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your ```main.py```.
+2. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
-3. In docker-compose.yaml under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
+3. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your ```main.py```.
 
-4. Place your ```submission.zip``` in ```docker_scripts/```. 
+4. In docker-compose.yaml under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
 
-5. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) in order to run containers with GPU acceleration
+5. Place your ```submission.zip``` in ```docker_scripts/```. 
 
-6. Execute the docker compose environement:
+6. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) in order to run containers with GPU acceleration
+
+7. Execute the docker compose environement:
 ```bash
 docker compose up
 ```
