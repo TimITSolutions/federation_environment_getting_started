@@ -26,7 +26,7 @@ There are six simple conditions that need to be fulfilled for the submission to 
 
 1. The entrypoint of the code needs to be called ```main.py```.  
 2. A ```requirements.txt``` file needs to be provided.
-3. **Username** and **password** of the MLFLOW user must be included. The username and password can be found after your login to your account in fe.zgt.nl.
+3. **Username** and **password** of the MLFLOW user must be included. The username and password can be found after your login to your account in [fe.zgt.nl](fe.zgt.nl).
 4. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**. 
 5. The submission, i.e. your code must be in ```zip``` format. Export the master branch as a ZIP file:
 ```bash
@@ -34,9 +34,9 @@ git archive --format=zip --output submission.zip master
 ```
 Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct (i.e. submission.zip should directly contain the files under it) and the command will work on any platform (Windows, Linux, MacOS). 
 
-7. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code.
-8. The dataset in the model-to-data platform is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
-9. You can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you.
+6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code.
+7. The dataset in the model-to-data platform is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
+8. You can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you.
 
 ### Testing your code locally
 
@@ -48,7 +48,7 @@ As debugging submitted code becomes quite difficult, you can test on your local 
 
 3. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your ```main.py```.
 
-4. In docker-compose.yaml under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
+4. In ```docker-compose.yaml``` under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
 
 5. Place your ```submission.zip``` in ```docker_scripts/```. 
 
@@ -59,13 +59,13 @@ As debugging submitted code becomes quite difficult, you can test on your local 
 docker compose up
 ```
 
-You can now observe the output of your submission in the terminal and view your results in mlflow through ```http://localhost:3001/```. 
+You can now observe the output of your submission in the terminal and view your results in mlflow through [http://localhost:3001/](http://localhost:3001/). 
 
 ### Submit your code to our platform
 
 1. Login to your account on [fe.zgt.nl](fe.zgt.nl) or sign up if you don't have any account. An admin will approve your request after review.
 2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 in the main.py of the [sample code](./sample_code)).
-3. Upload your code, i.e. submission.zip to [fe.zgt.nl](fe.zgt.nl) and wait for results to become visible in [mlflow.zgt.nl](mlflow.zgt.nl).
+3. Upload your code, i.e. ```submission.zip``` to [fe.zgt.nl](fe.zgt.nl) and wait for results to become visible in [mlflow.zgt.nl](mlflow.zgt.nl).
 
 ## Running our sample code
 We provide 2 sample code to test [locally](./README.md#testing-your-code-locally) or [on our platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
