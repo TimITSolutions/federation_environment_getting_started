@@ -118,3 +118,5 @@ Start docker desktop
 	5. After creating, login with your username and password. If you login with your email address and password, then when running step 6, it will show "unauthorized: incorrect username or password". To resolve this, log out and login correctly again with your username and not email address. Also, do this in PowerShell: docker login --username your-username. Then, step 6 should work correctly. 
 	6. Go to powershell and type: docker run hello-world. If this shows hello-world, then docker is successfully installed in your machine. 
 
+### Setup docker on ubuntu
+We installed docker using the [apt repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
