@@ -22,66 +22,61 @@ The CLaM dataset stored in fe.zgt.nl reflects a similar structure and can be acc
 
 ### Prepare your code for the platform
 
-There are a four simple conditions that need to be fulfilled for the submission to run successfully:
+There are six simple conditions that need to be fulfilled for the submission to run successfully:
 
 1. The entrypoint of the code needs to be called ```main.py```.  
 2. A ```requirements.txt``` file needs to be provided.
-3. **Username** and **password** of the MLFLOW user must be included.
+3. **Username** and **password** of the MLFLOW user must be included. The username and password can be found after your login to your account in [fe.zgt.nl](fe.zgt.nl).
 4. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**. 
-5. The submission must be in ```zip``` format.
-6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code. 
+5. The submission, i.e. your code must be in ```zip``` format. Export the master branch as a ZIP file:
+```bash
+git archive --format=zip --output submission.zip master
+```
+Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct (i.e. submission.zip should directly contain the files under it) and the command will work on any platform (Windows, Linux, MacOS). 
 
-The dataset in the model-to-data platform is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.   
-
-You can write logs, other data and save trained models to ```/mnt/export/```, a staff member can later access this volume and share the data with you.
+6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code.
+7. The dataset in the model-to-data platform is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
+8. You can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you.
 
 ### Testing your code locally
 
-As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform. Note: This step requires you to have a NVIDIA GPU in your system.
+As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform. Note: This step requires you to have a NVIDIA GPU in your system. 
 
-Before you can follow the steps below, you need to have docker setup locally. Refer to [Additional Information](#additional-information) to setup docker. 
+1. Install docker locally. Refer to [Additional Information](#additional-information) to setup docker.
 
-1. **Username** and **password** of the MLFLOW user is not needed for testing locally.
+2. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
-2. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your code.
+3. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your ```main.py```.
 
-3. In docker-compose.yaml under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
+4. In ```docker-compose.yaml``` under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
 
-4. Place your ```submission.zip``` in ```docker_scripts/```. 
+5. Place your ```submission.zip``` in ```docker_scripts/```. 
 
-5. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) in order to run containers with GPU acceleration
+6. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) in order to run containers with GPU acceleration
 
-6. Execute the docker compose environement:
+7. Execute the docker compose environement:
 ```bash
 docker compose up
 ```
 
-You can now observe the output of your submission in the terminal. 
+You can now observe the output of your submission in the terminal and view your results in mlflow through [http://localhost:3001/](http://localhost:3001/). 
 
 ### Submit your code to our platform
 
-In order to test this code, perform the following steps:
-
-1. Login to your account on [fe.zgt.nl](fe.zgt.nl).
-2. Copy your auto-generated **username** and **password** into the ```main.py``` of this repository (line 26 and 27 in respectively).
-3. Commit your changes:
-```bash
-git commit -am "added my own credentials"
-```
-4. Export the master branch as a ZIP file:
-```bash
-git archive --format=zip --output submission.zip master
-```
-5. Upload the code to [fe.zgt.nl](fe.zgt.nl) and wait for results to become visible in [mlflow.zgt.nl](mlflow.zgt.nl).
-
-Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct and the command will work on any platform (Windows, Linux, MacOS).
+1. Login to your account on [fe.zgt.nl](fe.zgt.nl) or sign up if you don't have any account. An admin will approve your request after review.
+2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 in the main.py of the [sample code](./sample_code)).
+3. Upload your code, i.e. ```submission.zip``` to [fe.zgt.nl](fe.zgt.nl) and wait for results to become visible in [mlflow.zgt.nl](mlflow.zgt.nl).
 
 ## Running our sample code
 We provide 2 sample code to test [locally](./README.md#testing-your-code-locally) or [on our platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
 
 (1) [Simple code on iris dataset](./sample_code) </br>
+- zip the code to ```submission.zip``` and submit.
 
-(2) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. Clone the repository and get started.
+(2) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. 
+- Clone the repository.
+- replace run1 by run2 in lines 61, 94 and 100.
+- for a quick check with a subset of CLaM dataset, uncomment lines 295, 297, 298. 
 
 ## Additional Information
 
@@ -116,3 +111,5 @@ Start docker desktop
 	5. After creating, login with your username and password. If you login with your email address and password, then when running step 6, it will show "unauthorized: incorrect username or password". To resolve this, log out and login correctly again with your username and not email address. Also, do this in PowerShell: docker login --username your-username. Then, step 6 should work correctly. 
 	6. Go to powershell and type: docker run hello-world. If this shows hello-world, then docker is successfully installed in your machine. 
 
+### Setup docker on ubuntu
+We installed docker using the [apt repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
