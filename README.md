@@ -36,7 +36,7 @@ Here are the conditions that need to be fulfilled for the submission to run succ
 ```bash
 git archive --format=zip --output submission.zip master
 ```
-Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct (i.e. submission.zip should directly contain the files under it) and the command will work on any platform (Windows, Linux, MacOS). 
+Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct (i.e. submission.zip should directly contain the ```main.py``` and ```requirements.txt``` under it) and the command will work on any platform (Windows, Linux, MacOS). 
 
 6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code.
 
