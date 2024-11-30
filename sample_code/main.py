@@ -118,7 +118,7 @@ with mlflow.start_run():
     mlflow.set_tag("Training Info", "Basic LR model for iris data")
 
     # Infer the model signature
-    signature = infer_signature(X_train, lr.predict(X_train))
+    '''signature = infer_signature(X_train, lr.predict(X_train))
 
     image = np.random.randint(0, 256, size=(100, 100, 3), dtype=np.uint8)
     mlflow.log_image(image, key="dogs")
@@ -130,4 +130,4 @@ with mlflow.start_run():
         signature=signature,
         input_example=X_train,
         registered_model_name="tracking-quickstart",
-    )
+    )'''
