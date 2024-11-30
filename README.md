@@ -16,7 +16,7 @@ This respository fulfills three main purposes:
 <ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](https://fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
 We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the CLaM dataset. CLaM-sample contains 10 cases or mammography exams (S01-A01, S02-A02, ..) from 10 patients (P01, P02, ...). A mammography exam/case contains images of standard views from left (L) and right (R) breast - LMLO, LCC, RMLO and RCC and can also contain additional views - LXCCL, RXCCL, LLM, RLM, LML, RML. Each image folder, e.g. S01-A01/LMLO contains 2 images - 1.png (image in 8 bit) and 1.npy (image in 12 bit). The [datasets](./datasets) folder also contains csv files with the list of the [cases](./datasets/clam-small-subset-deceased-case.csv) and their corresponding case-level diagnosis of malignant or benign and list of [images in the cases](./datasets/clam-small-subset-deceased-image.csv). 
 
-The CLaM dataset stored in fe.zgt.nl reflects a similar structure and can be accessed similarly.
+The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar structure and can be accessed similarly.
 
 ## Running your own code on our model-to-data platform
 
