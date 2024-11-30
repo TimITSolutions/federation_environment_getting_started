@@ -22,7 +22,7 @@ The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar 
 
 ### Prepare your code for the platform
 
-There are six simple conditions that need to be fulfilled for the submission to run successfully:
+Here are the conditions that need to be fulfilled for the submission to run successfully:
 
 1. The entrypoint of the code needs to be called ```main.py```.  
 
