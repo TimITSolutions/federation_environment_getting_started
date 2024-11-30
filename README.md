@@ -42,7 +42,7 @@ Exporting the code via ```git``` might seem like unnecessary work, but ensures t
 
 7. The dataset in the [model-to-data platform](https://fe.zgt.nl) is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
 
-8. You can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you.
+8. You can log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics()```. We have disable saving artifacts with our MLflow instance to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
 
 ### Testing your code locally
 
