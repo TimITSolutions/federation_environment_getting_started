@@ -6,7 +6,7 @@ We developed a [model-to-data platform](https://fe.zgt.nl) to provide users worl
 
 This respository fulfills three main purposes:
 
-1. The section [Running your own code on our model-to-data platform](#running-your-own-code-on-our-model-to-data-platform) describes, i) how to prepare your code to submit to our platform, ii) how to set up a local environment, in which you can test if your code would work on our platform, and iii) how to submit your code to our platform. 
+1. The section [Running your own code on our model-to-data platform](#running-your-own-code-on-our-model-to-data-platform) describes, i) how to prepare your code to submit to our platform, ii) how to set up a local environment where you can test if your code would work on our platform, and iii) how to submit your code to our platform. 
 
 2. The section [Running our sample code](#running-our-sample-code) contains 2 code - one simple code on iris dataset and one for a case-level breast cancer model that works on CLaM dataset. You can test these code on our platform and refer to these while preparing your code.
 
