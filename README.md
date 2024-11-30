@@ -13,7 +13,7 @@ This respository fulfills three main purposes:
 3. The section [Additional Information](#additional-information) provides information on how to setup docker on windows and ubuntu. 
 
 ## CLaM Dataset
-<ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
+<ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](https://fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
 We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the CLaM dataset. CLaM-sample contains 10 cases or mammography exams (S01-A01, S02-A02, ..) from 10 patients (P01, P02, ...). A mammography exam/case contains images of standard views from left (L) and right (R) breast - LMLO, LCC, RMLO and RCC and can also contain additional views - LXCCL, RXCCL, LLM, RLM, LML, RML. Each image folder, e.g. S01-A01/LMLO contains 2 images - 1.png (image in 8 bit) and 1.npy (image in 12 bit). The [datasets](./datasets) folder also contains csv files with the list of the [cases](./datasets/clam-small-subset-deceased-case.csv) and their corresponding case-level diagnosis of malignant or benign and list of [images in the cases](./datasets/clam-small-subset-deceased-image.csv). 
 
 The CLaM dataset stored in fe.zgt.nl reflects a similar structure and can be accessed similarly.
@@ -28,7 +28,7 @@ There are six simple conditions that need to be fulfilled for the submission to 
 
 2. A ```requirements.txt``` file needs to be provided.
 
-3. **Username** and **password** of the MLFLOW user must be included. The username and password can be found after your login to your account in [fe.zgt.nl](fe.zgt.nl).
+3. **Username** and **password** of the MLFLOW user must be included. The username and password can be found after your login to your account in [fe.zgt.nl](https://fe.zgt.nl).
 
 4. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**. 
 
@@ -56,7 +56,7 @@ As debugging submitted code becomes quite difficult, you can test on your local 
 
 2. **Username** and **password** of the MLFLOW user is not needed for testing locally.
 
-3. MLFLOW output must be tracked through [localhost:3001](localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your ```main.py```.
+3. MLFLOW output must be tracked through [localhost:3001](http://localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your ```main.py```.
 
 4. In ```docker-compose.yaml``` under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
 
