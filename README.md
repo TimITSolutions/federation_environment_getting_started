@@ -50,7 +50,7 @@ As debugging submitted code becomes quite difficult, you can test on your local 
 
 **For testing on a machine with a NVIDIA GPU**: Use ```docker-compose.yaml``` and ```docker_scripts/execute_code```. This setup reflects the exact setup on our model-to-data platform. <br/>
 
-**For testing on a machine without a NVIDIA GPU**: Use docker-compose-without-gpu.yaml and docker_scripts/execute_code-without-gpu and rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before running step (7) below. You don't need to execute step (6) in this setting. <br/>
+**For testing on a machine without a NVIDIA GPU**: Use ```docker-compose-without-gpu.yaml``` and ```docker_scripts/execute_code-without-gpu``` and rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before running step (7) below. You don't need to execute step (6) in this setting. <br/>
 
 1. Install docker locally. Refer to [Additional Information](#additional-information) to setup docker.
 
