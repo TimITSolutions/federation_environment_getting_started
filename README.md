@@ -42,6 +42,9 @@ Exporting the code via ```git``` might seem like unnecessary work, but ensures t
 
 As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform. Note: This step requires you to have a NVIDIA GPU in your system. 
 
+For testing on a machine with a NVIDIA gpu: Use docker-compose.yaml and docker_scripts/execute_code <br/>
+For testing on a machine without a NVIDIA gpu: Use docker-compose-without-gpu.yaml and docker_scripts/execute_code-without-gpu and rename them to docker-compose.yaml and docker_scripts/execute_code before running step (7) below. <br/>
+
 1. Install docker locally. Refer to [Additional Information](#additional-information) to setup docker.
 
 2. **Username** and **password** of the MLFLOW user is not needed for testing locally.
