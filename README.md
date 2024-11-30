@@ -28,7 +28,7 @@ Here are the conditions that need to be fulfilled for the submission to run succ
 
 2. A ```requirements.txt``` file needs to be provided.
 
-3. **Username** and **password** of the MLFLOW user must be included. The username and password can be found after you login to your account in [platform](https://fe.zgt.nl).
+3. **Username** and **password** of the MLFLOW user must be included. The username and password can be found after you login to your account on our [platform](https://fe.zgt.nl).
 
 4. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**. 
 
