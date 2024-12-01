@@ -80,7 +80,7 @@ You can now observe the output of your submission in the terminal and view your 
 3. Upload your code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl) and wait for results to become visible in [mlflow.zgt.nl](https://mlflow.zgt.nl).
 
 ## Running our sample code
-We provide 2 sample code to test [locally](./README.md#testing-your-code-locally) or [on our platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
+We provide 2 sample code to test [locally](./README.md#testing-your-code-locally) or on our [platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
 
 (1) [Simple code on iris dataset](./sample_code) </br>
 - zip the code to ```submission.zip``` and submit.
