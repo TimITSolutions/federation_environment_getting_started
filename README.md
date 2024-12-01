@@ -82,11 +82,11 @@ You can now observe the output of your submission in the terminal and view your 
 ## Running our sample code
 We provide 2 sample code to test [locally](./README.md#testing-your-code-locally) or on our [platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
 
-(1) [Simple code on iris dataset](./sample_code) </br>
-- zip the code (e.g. as ```submission.zip```) and submit.
+(1) Simple code on iris dataset </br>
+- zip the [code](./sample_code) (e.g. as ```submission.zip```) and submit.
 
-(2) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. 
-- Clone the repository.
+(2) Case-level breast cancer model, ES-Att-Side, that works on CLaM dataset. 
+- Clone the [repository](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access).
 - runs/run1/config_8.ini for testing on the platform and runs/run2/config_8.ini for testing locally. Add the correct config file accordingly in lines 61, 94 and 100.
 - Comment lines 295, 297 and 298 [here](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access/blob/main/setup/read_input_file.py) to train the model on the complete CLaM dataset.
 
