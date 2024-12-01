@@ -73,7 +73,7 @@ You can now observe the output of your submission in the terminal and view your 
 
 ### Submit your code to our platform
 
-1. Login to your account on [fe.zgt.nl](fe.zgt.nl) or sign up if you don't have any account. An admin will approve your request after review.
+1. Login to your account on our [platform](fe.zgt.nl) or sign up if you don't have any account. An admin will approve your request after review.
 
 2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 in the main.py of the [sample code](./sample_code)).
 
