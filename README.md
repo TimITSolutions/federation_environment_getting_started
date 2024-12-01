@@ -87,8 +87,8 @@ We provide 2 sample code to test [locally](./README.md#testing-your-code-locally
 
 (2) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. 
 - Clone the repository.
-- replace run1 by run2 in lines 61, 94 and 100.
-- for a quick check with a subset of CLaM dataset, uncomment lines 295, 297, 298. 
+- runs/run1/config_8.ini for testing on the platform and runs/run2/config_8.ini for testing locally. Add the correct config file accordingly in lines 61, 94 and 100.
+- Comment lines 295, 297 and 298 [here](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access/blob/main/setup/read_input_file.py) to train the model on the complete CLaM dataset.
 
 ## Additional Information
 
