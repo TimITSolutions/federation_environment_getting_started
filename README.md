@@ -83,7 +83,7 @@ You can now observe the output of your submission in the terminal and view your 
 We provide 2 sample code to test [locally](./README.md#testing-your-code-locally) or on our [platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
 
 (1) [Simple code on iris dataset](./sample_code) </br>
-- zip the code to ```submission.zip``` and submit.
+- zip the code (e.g. as ```submission.zip```) and submit.
 
 (2) Case-level breast cancer model, [ES-Att-Side](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access), that works on CLaM dataset. 
 - Clone the repository.
