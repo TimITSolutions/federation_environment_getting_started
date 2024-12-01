@@ -75,7 +75,7 @@ You can now observe the output of your submission in the terminal and view your 
 
 1. Login to your account on our [platform](fe.zgt.nl) or sign up if you don't have any account. An admin will approve your request after review.
 
-2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 in the main.py of the [sample code](./sample_code)).
+2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 of the [sample code](./sample_code/main.py)).
 
 3. Upload your code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl) and wait for results to become visible in [mlflow.zgt.nl](https://mlflow.zgt.nl).
 
