@@ -7,9 +7,9 @@ The [model-to-data platform](https://fe.zgt.nl) provides worldwide access to our
 
 What can you find in this repository <br/>
 :star: Instructions to write your code, upload it to the platform and view the results. <br/>
-:star: Sample code on toy dataset (iris). <br/>
-:star: Sample code for breast cancer prediction on CLaM dataset. <br/>
-:star: Subset of the CLaM dataset. <br/>
+:star: Sample code on toy dataset (iris) to quickly test the upload pipeline. <br/>
+:star: Sample code for breast cancer prediction on CLaM dataset to kickstart your breast cancer code development. <br/>
+:star: Subset of the CLaM dataset to give you an idea about CLaM. <br/>
 :star: Local docker environment similar to our platform to locally debug your code before submitting. <br/>
 
 # Getting started
@@ -35,18 +35,17 @@ Develop your code
 1. Refer to the subset of the CLaM dataset, [CLaM-sample](./datasets) in this repository to develop your code.
 2. The entrypoint of the code needs to be called ```main.py```.
 3. Provide all packages needed to run your code in ```requirements.txt```.
-4. We provide a sample code for CLaM dataset
+4. We provide a sample breast cancer prediction code for CLaM dataset. Refer to this for developing your code.
 
 Test your code locally using a similar docker environment as the one used in the platform.
 1. Install [docker]().
 2. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of [datasets folder](./dataset).
 4. Place your ```submission.zip``` in ```docker_scripts/```.
-5. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) in order to run containers with GPU acceleration
-6. Execute the docker compose environement: ```docker compose up```
-7. Track the results in mlflow through [http://localhost:3001/](http://localhost:3001/)
+5. Execute the docker compose environement: ```docker compose up```
+6. Track the results in mlflow through [http://localhost:3001/](http://localhost:3001/)
 
-**Test on a machine with a NVIDIA GPU**: Use ```docker-compose.yaml``` and ```docker_scripts/execute_code```. This setup reflects the exact setup on our model-to-data platform. <br/>
-**Test on a machine without a NVIDIA GPU**: Use ```docker-compose-without-gpu.yaml``` and ```docker_scripts/execute_code-without-gpu``` and rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before running step (6) below. You don't need to execute step (5) in this setting. <br/>
+**Test on a machine with a NVIDIA GPU**: Use ```docker-compose.yaml``` and ```docker_scripts/execute_code```. This setup reflects the exact setup on our model-to-data platform. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) in order to run containers with GPU acceleration <br/>
+**Test on a machine without a NVIDIA GPU**: Use ```docker-compose-without-gpu.yaml``` and ```docker_scripts/execute_code-without-gpu``` and rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before running step (6) below. <br/>
 
 ## Submit your code to our platform
 
