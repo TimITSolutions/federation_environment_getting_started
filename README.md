@@ -19,7 +19,8 @@ How to use this repository:
  	2. zip the code, i.e. here main.py and requirements.txt, such that they are directly under the root folder (e.g. submission.zip).
   	3. upload submission.zip on the platform.
    	4. You will receive email notification with the following: the code received (the docker image is bulit after this, so it will take some time), queued for execution, execution started, and execution finished.
-   	5. Go to mlflow.zgt.nl to track the progress of your experiment (after you received the email notification that execution has started).   
+   	5. Go to [mlflow.zgt.nl](mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
+   	6. Contact [s.pathak@utwente.nl](s.pathak@utwente.nl) for received your trained model. 
 
 ## About this repository
 
