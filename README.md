@@ -10,6 +10,16 @@ How to use this repository:
 1. Getting started with the platform
 1. Train a breast cancer detection model
 
+# Getting started with the platform
+
+1. Sign-up on the platform. An admin will approve your sign up request after review.
+2. Clone this repository
+3. Test the upload pipeline with our sample code on toy dataset (iris dataset).
+	1. Login to your account on the platform. Copy your MLflow credentials (username and password) and add it in line 26 and 27 of the [main.py](./sample_code/toy-dataset/main.py)   
+ 	2. zip the code, i.e. here main.py and requirements.txt, such that they are directly under the root folder (e.g. submission.zip).
+  	3. upload submission.zip on the platform.
+   	4. You will receive email notification with the following: the code received (the docker image is bulit after this, so it will take some time), queued for execution, execution started, and execution finished.
+   	5. Go to mlflow.zgt.nl to track the progress of your experiment (after you received the email notification that execution has started).   
 
 ## About this repository
 
