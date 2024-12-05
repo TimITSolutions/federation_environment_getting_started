@@ -36,6 +36,7 @@ Develop your code. Here's our sample code for breast cancer prediction on CLaM t
 2. The entrypoint of the code needs to be called ```main.py```.
 3. Provide all packages needed to run your code in ```requirements.txt```.
 4. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
+5. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
 
 Test your code locally using a similar docker environment as the one used in the platform.
 1. Install [docker]().
@@ -50,79 +51,19 @@ Test your code locally using a similar docker environment as the one used in the
 
 ## Submit your code to our platform
 1. Login to your account on our [platform](https://fe.zgt.nl). 
-2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py```.
-3. The dataset in the [model-to-data platform](https://fe.zgt.nl) is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
-4. Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics()```. We have disabled saving artifacts with our MLflow instance to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
-5. Upload your code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl). Make sure that main.py and requirements.txt are in the root directory of the zip.
-6. Track your results through [mlflow.zgt.nl](https://mlflow.zgt.nl).
-7. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model or other log files.
+2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 of the [sample code](./sample_code/main.py)).
+3. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**
+4. Change the path to the dataset. The CLaM dataset on the [platform](https://fe.zgt.nl) is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
+5. Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics()```. We have disabled saving artifacts on our MLflow server to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
+6. Upload your code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl). Make sure that main.py and requirements.txt are in the root directory of the zip.
+7. Track your results through [mlflow.zgt.nl](https://mlflow.zgt.nl).
+8. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model or other log files.
 
 ## CLaM Dataset
 <ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](https://fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
 We provide a sample of the CLaM dataset, [CLaM-sample](./datasets) in this repository for users to prepare their code that can work on the CLaM dataset. CLaM-sample contains 10 cases or mammography exams (S01-A01, S02-A02, ..) from 10 patients (P01, P02, ...). A mammography exam/case contains images of standard views from left (L) and right (R) breast - LMLO, LCC, RMLO and RCC and can also contain additional views - LXCCL, RXCCL, LLM, RLM, LML, RML. Each image folder, e.g. S01-A01/LMLO contains 2 images - 1.png (image in 8 bit) and 1.npy (image in 12 bit). The [datasets](./datasets) folder also contains csv files with the list of the [cases](./datasets/clam-small-subset-deceased-case.csv) and their corresponding case-level diagnosis of malignant or benign and list of [images in the cases](./datasets/clam-small-subset-deceased-image.csv). 
 
 The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar structure and can be accessed similarly.
-
-## Running your own code on our model-to-data platform
-
-### Prepare your code for the platform
-
-Here are the conditions that need to be fulfilled for the submission to run successfully:
-
-1. The entrypoint of the code needs to be called ```main.py```.  
-
-2. A ```requirements.txt``` file needs to be provided.
-
-3. **Username** and **password** of the MLFLOW user must be included. The username and password can be found after you login to your account on our [platform](https://fe.zgt.nl).
-
-4. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**. 
-
-5. The submission, i.e. your code must be in ```zip``` format. Export the master branch as a ZIP file:
-```bash
-git archive --format=zip --output submission.zip master
-```
-Exporting the code via ```git``` might seem like unnecessary work, but ensures that the format is correct (i.e. ```submission.zip``` should contain the ```main.py``` and ```requirements.txt``` directly under it) and the command will work on any platform (Windows, Linux, MacOS). 
-
-6. We provide a sample of our CLaM dataset, [CLaM-sample](./datasets) in this repository. Refer to CLaM-sample while writing your code.
-
-7. The dataset in the [model-to-data platform](https://fe.zgt.nl) is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
-
-8. You can log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics()```. We have disabled saving artifacts with our MLflow instance to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
-
-### Testing your code locally
-
-As debugging submitted code becomes quite difficult, you can test on your local computer if your code will successfully work on our platform.  
-
-**For testing on a machine with a NVIDIA GPU**: Use ```docker-compose.yaml``` and ```docker_scripts/execute_code```. This setup reflects the exact setup on our model-to-data platform. <br/>
-
-**For testing on a machine without a NVIDIA GPU**: Use ```docker-compose-without-gpu.yaml``` and ```docker_scripts/execute_code-without-gpu``` and rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before running step (7) below. You don't need to execute step (6) in this setting. <br/>
-
-1. Install docker locally. Refer to [Additional Information](#additional-information) to setup docker.
-
-2. **Username** and **password** of the MLFLOW user is not needed for testing locally.
-
-3. MLFLOW output must be tracked through [localhost:3001](http://localhost:3001). Add ```mlflow.set_tracking_uri(uri="http://localhost:3001")``` to your ```main.py```.
-
-4. In ```docker-compose.yaml``` under volumes (line 31), change ```/home/datasets``` to your local path of [datasets folder](./datasets).
-
-5. Place your ```submission.zip``` in ```docker_scripts/```. 
-
-6. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) in order to run containers with GPU acceleration
-
-7. Execute the docker compose environement:
-```bash
-docker compose up
-```
-
-You can now observe the output of your submission in the terminal and view your results in mlflow through [http://localhost:3001/](http://localhost:3001/). 
-
-### Submit your code to our platform
-
-1. Login to your account on our [platform](https://fe.zgt.nl). If you don't have any account, sign up. Then, an admin will approve your sign up request after review.
-
-2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 of the [sample code](./sample_code/main.py)).
-
-3. Upload your code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl) and wait for results to become visible in [mlflow.zgt.nl](https://mlflow.zgt.nl).
 
 ## Running our sample code
 We provide 2 sample code to test [locally](./README.md#testing-your-code-locally) or on our [platform](./README.md#submit-your-code-to-our-platform). You can also refer to this while preparing your code. </br> 
