@@ -1,6 +1,9 @@
-# Our model-to-data platform and instructions on how to use it
-We developed a [model-to-data platform](https://fe.zgt.nl) to provide users worldwide access to our mammography dataset, CLaM, in a privacy preserving manner. The dataset is collected from Ziekenhuis Groep Twente (ZGT), The Netherlands. Through our model-to-data platform, users can send their artificially intelligent (AI) model script for training on our mammography dataset. The mammography dataset stays within the hospital and users cannot download or see the dataset. The users only get back the model’s performance on our dataset when the training is complete and can also get the trained model on request. Thus, instead of bringing the data to the model, we bring the model to the data.
+# The model-to-data platform
 
+:cool: Bring the model to the (privacy-sensitive) data, instead of the data to the model.
+
+
+The [model-to-data platform](https://fe.zgt.nl) provides worldwide access to our mammography dataset, [CLaM](link-to-dataset-description), in a privacy-preserving manner. The dataset was collected by the Ziekenhuis Groep Twente (ZGT) in the Netherlands. The platform allows users to submit their code to train a machine learning model on CLaM. Users upload their code for model training, the model is trained on the dataset, and users receive evaluation results and, upon request, the trained model.
 
 ## About this repository
 
