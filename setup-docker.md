@@ -1,4 +1,4 @@
-# Setup docker for testing your code locally
+# Install Docker
 
 ## Setup docker on windows
 For testing your code locally, you need to have docker setup on your machine. Below are the steps we followed to set it up on windows.</br>
