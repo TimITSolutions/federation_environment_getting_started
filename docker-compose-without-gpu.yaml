@@ -21,7 +21,7 @@ services:
       - mlflow-server
     volumes:
       - export:/mnt/export/
-      - '/home/datasets:/mnt/dataset/' #replace the left side of the colon with your local path to the CLaM dataset, e.g. if your local path is: /home/datasets/CLaM-sample, then use /home/datasets
+      - '/home/dataset:/mnt/dataset/' #replace the left side of the colon with your local path to the CLaM dataset, e.g. if your local path is: /home/dataset/CLaM-sample, then use /home/dataset
 
 volumes:
   export:
