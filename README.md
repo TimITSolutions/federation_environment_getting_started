@@ -32,10 +32,11 @@ You can test the upload pipeline with the sample code on toy dataset.
 
 ## Develop and test your code locally
 Develop your code
-1. Refer to the subset of the CLaM dataset, [CLaM-sample](./datasets) in this repository to develop your code.
+1. Use subset of the CLaM dataset, [CLaM-sample](./datasets) in this repository to develop your code.
 2. The entrypoint of the code needs to be called ```main.py```.
 3. Provide all packages needed to run your code in ```requirements.txt```.
-4. We provide a sample breast cancer prediction code for CLaM dataset. Refer to this for developing your code.
+4. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
+5. We provide a sample breast cancer prediction code for CLaM dataset. Refer to this for developing your code.
 
 Test your code locally using a similar docker environment as the one used in the platform.
 1. Install [docker]().
@@ -49,16 +50,13 @@ Test your code locally using a similar docker environment as the one used in the
 **Test on a machine without a NVIDIA GPU**: Use ```docker-compose-without-gpu.yaml``` and ```docker_scripts/execute_code-without-gpu``` and rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before running step (6) below. <br/>
 
 ## Submit your code to our platform
-
-## About this repository
-
-This respository fulfills three main purposes:
-
-1. The section [Running your own code on our model-to-data platform](#running-your-own-code-on-our-model-to-data-platform) describes, i) how to prepare your code to submit to our platform, ii) how to set up a local environment where you can test if your code would work on our platform, and iii) how to submit your code to our platform. 
-
-2. The section [Running our sample code](#running-our-sample-code) contains 2 code - one simple code on iris dataset and one for a case-level breast cancer model that works on CLaM dataset. You can test these code on our platform and refer to these while preparing your code.
-
-3. The section [Additional Information](#additional-information) provides information on how to setup docker on windows and ubuntu. 
+1. Login to your account on our [platform](https://fe.zgt.nl). 
+2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py```.
+3. The dataset in the [model-to-data platform](https://fe.zgt.nl) is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
+4. Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics()```. We have disabled saving artifacts with our MLflow instance to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
+5. Upload your code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl). Make sure that main.py and requirements.txt are in the root directory of the zip.
+6. Track your results through [mlflow.zgt.nl](https://mlflow.zgt.nl).
+7. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model or other log files.
 
 ## CLaM Dataset
 <ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](https://fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
