@@ -10,17 +10,31 @@ How to use this repository:
 1. Getting started with the platform
 1. Train a breast cancer detection model
 
-# Getting started with the platform
+# Getting started
+1. Sign-up on the platform.
+2. Test the upload pipeline with our sample code
+3. Develop and test your code locally
+4. Submit your code to our platform
 
-1. Sign-up on the platform. An admin will approve your sign up request after review.
-2. Clone this repository
-3. Test the upload pipeline with our sample code on toy dataset (iris dataset).
-	1. Login to your account on the platform. Copy your MLflow credentials (username and password) and add it in line 26 and 27 of the [main.py](./sample_code/toy-dataset/main.py)   
- 	2. zip the code, i.e. here main.py and requirements.txt, such that they are directly under the root folder (e.g. submission.zip).
-  	3. upload submission.zip on the platform.
-   	4. You will receive email notification with the following: the code received (the docker image is bulit after this, so it will take some time), queued for execution, execution started, and execution finished.
-   	5. Go to [mlflow.zgt.nl](mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
-   	6. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for received your trained model. 
+## Sign-up on the platform
+Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to j.geerdink@zgt.nl. Upon approval, you'll be find your MLFLOW username and password that you need to add to code to track your results.
+
+## Test the upload pipeline with our sample code
+You can test the upload pipeline with the sample code on toy dataset.
+1. Login to your account on the platform. Copy your MLflow credentials (username and password) and add it in line 26 and 27 of the [main.py](./sample_code/toy-dataset/main.py)
+2. zip main.py and requirements.txt, e.g. as submission.zip. Make sure that main.py and requirements.txt are in the root directory of the zip.
+3. Upload submission.zip on the platform.
+4. You will receive email notification with status of your submission.
+5. Go to [mlflow.zgt.nl](mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
+6. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model. 
+
+## Develop and test your code locally
+1. Refer to the subset of the CLaM dataset, [CLaM-sample](./datasets) in this repository to develop your code.
+2. The entrypoint of the code needs to be called ```main.py```.
+3. Provide all packages needed to run your code in ```requirements.txt```.  
+4. To test your code locally, we Install docker 
+
+## Submit your code to our platform
 
 ## About this repository
 
@@ -145,3 +159,6 @@ Start docker desktop
 
 ### Setup docker on ubuntu
 We installed docker using the [apt repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
+
+### Email notification
+the code received (the docker image is bulit after this, so it will take some time), queued for execution, execution started, and execution finished.
