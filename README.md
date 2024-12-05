@@ -5,6 +5,12 @@
 
 The [model-to-data platform](https://fe.zgt.nl) provides worldwide access to our mammography dataset, [CLaM](link-to-dataset-description), in a privacy-preserving manner. The dataset was collected by the Ziekenhuis Groep Twente (ZGT) in the Netherlands. The platform allows users to submit their code to train a machine learning model on CLaM. Users upload their code for model training, the model is trained on the dataset, and users receive evaluation results and, upon request, the trained model.
 
+How to use this repository:
+<font color="red">add links to headings</font>
+1. Getting started with the platform
+1. Train a breast cancer detection model
+
+
 ## About this repository
 
 This respository fulfills three main purposes:
