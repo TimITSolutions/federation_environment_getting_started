@@ -37,12 +37,12 @@ Develop your code for CLaM. Here's our [sample code for breast cancer prediction
 1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code.
 2. How to access the dataset within the code can be found [here](./dataset.md). 
 3. The entrypoint of the code needs to be called ```main.py```.
-4. Provide all packages needed to run your code in ```requirements.txt```[instructions](#generate-requirementstxt). 
+4. Provide all packages needed to run your code in ```requirements.txt``` ([generate requirements.txt](#generate-requirementstxt)). 
 5. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
 6. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
 
-Test your code locally on CLaM-sample using a similar docker environment as the one used in the platform.
-1. Install [docker]().
+Test your code locally on CLaM-sample in a similar docker environment as the one used in the platform.
+1. Install [docker](./docker.md).
 2. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of [datasets folder](./dataset).
 3. Place your ```submission.zip``` in ```docker_scripts/```.
 4. Execute the docker compose environement: ```docker compose up```
