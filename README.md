@@ -15,6 +15,7 @@ What can you find in this repository? <br/>
 :star: Local docker environment similar to our platform to locally debug your code before submitting. <br/>
 
 ## Getting started
+Clone this repository and follow the steps below to get started.
 1. [Sign-up on the platform](#sign-up-on-the-platform).
 2. [Test the upload pipeline with our sample code](#test-the-upload-pipeline-with-our-sample-code)
 3. [Develop and test your code locally](#develop-and-test-your-code-locally)
