@@ -34,7 +34,7 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 
 ### Develop and test your code locally
 Develop your code for CLaM. Here's our [sample code for breast cancer prediction](./sample_code/clam-dataset) on CLaM to guide you.
-1. Use subset of the CLaM dataset, [CLaM-sample](./datasets) in this repository to develop your code.
+1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code.
 2. How to access the dataset within the code can be found here. 
 3. The entrypoint of the code needs to be called ```main.py```.
 4. Provide all packages needed to run your code in ```requirements.txt```.
