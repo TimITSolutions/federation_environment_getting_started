@@ -37,7 +37,7 @@ Develop your code for CLaM. Here's our [sample code for breast cancer prediction
 1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code.
 2. How to access the dataset within the code can be found [here](./dataset.md). 
 3. The entrypoint of the code needs to be called ```main.py```.
-4. Provide all packages needed to run your code in ```requirements.txt```.
+4. Provide all packages needed to run your code in ```requirements.txt```[instructions][#generate-requirements.txt]. 
 5. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
 6. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
 
@@ -68,6 +68,11 @@ Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set 
 
 ### Email notification
 the code received (the docker image is bulit after this, so it will take some time), queued for execution, execution started, and execution finished.
+
+### Generate requirements.txt
+
+- pip install pipreqs
+- pipreqs /path/to/project
 
 ### Run SOTA case-level breast cancer model
 
