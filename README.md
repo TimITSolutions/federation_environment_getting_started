@@ -21,7 +21,7 @@ What can you find in this repository? <br/>
 4. [Submit your code to our platform](#submit-your-code-to-our-platform)
 
 ### Sign-up on the platform
-Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to [Jeroen Geerdink](j.geerdink@zgt.nl). Upon approval, you'll be find your MLflow username and password in your account. You need to add this to your code to track your results.
+Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to Jeroen Geerdink, [j.geerdink@zgt.nl](j.geerdink@zgt.nl). Upon approval, you'll be find your MLflow username and password in your account. You need to add this to your code to track your results.
 
 ### Test the upload pipeline with our sample code
 You can test the upload pipeline with the sample code on toy dataset.
