@@ -28,7 +28,7 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 1. Login to your account on the platform. Copy your MLflow credentials (username and password) and add it in lines 26 and 27 of the [main.py](./sample_code/toy-dataset/main.py)
 2. zip ```main.py``` and ```requirements.txt```, e.g. as ```submission.zip```. Make sure that ```main.py``` and ```requirements.txt``` are in the root directory of the zip.
 3. Upload submission.zip on the platform.
-4. You will receive email notification with status of your submission.
+4. You will receive [email notification](#email-notification) with status of your submission and errors in code if encountered.
 5. Go to [mlflow.zgt.nl](mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
 6. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model. 
 
