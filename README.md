@@ -21,10 +21,10 @@ What can you find in this repository? <br/>
 4. [Submit your code to our platform](#submit-your-code-to-our-platform)
 
 ### Sign-up on the platform
-Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to Jeroen Geerdink, [j.geerdink@zgt.nl](j.geerdink@zgt.nl). Upon approval, you'll be find your MLflow username and password in your account. You need to add this to your code to track your results.
+Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to Jeroen Geerdink ([j.geerdink@zgt.nl](j.geerdink@zgt.nl)). Upon approval, you'll be find your MLflow username and password in your account. You need to add this to your code to track your results.
 
 ### Test the upload pipeline with our sample code
-You can test the upload pipeline with the sample code on toy dataset.
+You can test the upload pipeline with our [sample code on toy dataset](./sample_code/toy-dataset).
 1. Login to your account on the platform. Copy your MLflow credentials (username and password) and add it in line 26 and 27 of the [main.py](./sample_code/toy-dataset/main.py)
 2. zip main.py and requirements.txt, e.g. as submission.zip. Make sure that main.py and requirements.txt are in the root directory of the zip.
 3. Upload submission.zip on the platform.
