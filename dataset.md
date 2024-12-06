@@ -20,21 +20,21 @@ dataset
 ```
 
 ## Example data
-We provide a sample of the CLaM dataset, [CLaM-sample](./dataset) in this repository for users to prepare their code that can work on the CLaM dataset. CLaM-sample contains 10 cases or mammography exams (S01-A01, S02-A02, ..) from 10 patients (P01, P02, ...). A mammography exam/case contains images of standard views from left (L) and right (R) breast - LMLO, LCC, RMLO and RCC and can also contain additional views - LXCCL, RXCCL, LLM, RLM, LML, RML. Each image folder, e.g. S01-A01/LMLO contains 2 images - 1.png (image in 8 bit) and 1.npy (image in 12 bit). 
+We provide a sample of the CLaM dataset, [CLaM-sample](./dataset) in this repository for users to prepare their code that can work on the CLaM dataset. CLaM-sample contains 10 cases or mammography exams (S01-A01, S02-A02, ..) from 10 deceased patients (P01, P02, ...). A mammography exam/case contains images of standard views from left (L) and right (R) breast - LMLO, LCC, RMLO and RCC and can also contain additional views - LXCCL, RXCCL, LLM, RLM, LML, RML. Each image folder, e.g. S01-A01/LMLO contains 2 images - 1.png (image in 8 bit) and 1.npy (image in 12 bit). 
 
 The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar structure and can be accessed similarly.
 
 ## csv files
-[clam-details-case.csv](./dataset/clam-details-case.csv): list of the cases and their corresponding case-level diagnosis of malignant and benign. 
-The columns in the csv file are: 
-|Patient_Id       | Unique id of the patient |
-|CaseName         | Name of a case or exam, e.g. S1-A1 |
-|CasePath         | Path to the case, e.g. ./dataset/CLaM-sample/S1-A1, then CasePath is CLaM
-|Study_Description|
-|Views_4          |
+[clam-details-case.csv](./dataset/clam-details-case.csv): list of the cases and their corresponding case-level diagnosis of malignant and benign. The columns in the csv file are: 
+|Patient_Id       | Unique id of the patient                                                                |
+|CaseName         | Name of a case or exam, e.g. S1-A1                                                      |
+|CasePath         | Path to the case, e.g. ./dataset/CLaM/S1-A1, then CasePath is CLaM/S1-A1                |
+|Study_Description| Description of the exam                                                                 |
+|Views_4          | Only the standard views are mentioned                                                   | 
 |Views            | mentions all views available for the case, including both standard and additional views |
-|Groundtruth      | Case-level or exam-level diagnosis of malignant or benign       |
-|Split            | indicates whether the case is included in the train or test set.|
+|Groundtruth      | Case-level or exam-level diagnosis of malignant or benign                               |
+|Split            | indicates whether the case is included in the train or test set.                        |
+
 [clam-details-image.csv](./dataset/clam-details-image.csv): list of images in the cases.<br/>
 
 The CLaM dataset on the [platform](https://fe.zgt.nl) is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
