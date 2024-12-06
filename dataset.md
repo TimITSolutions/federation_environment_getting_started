@@ -7,14 +7,14 @@ dataset
 +--CLaM
 |  |
 |  +--S1-A1
-|     |
-|     +--LCC
-|     |  |
-|     |  \--1.png
-|     |  \--1.npy
-|     +--LMLO
-|     |  |
-|     |  |
+|  |  |
+|  |  +--LCC
+|  |  |  |
+|  |  |  \--1.png
+|  |  |  \--1.npy
+|  |  +--LMLO
+|  |  |  |
+|  |  |  |
 +--clam-details-case.csv
 +--clam-details-image.csv 
 ```
