@@ -22,26 +22,26 @@ Clone this repository and follow the steps below to get started.
 4. [Submit your code to our platform](#submit-your-code-to-our-platform)
 
 ### Sign-up on the platform
-Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to Jeroen Geerdink ([j.geerdink@zgt.nl](j.geerdink@zgt.nl)). Upon approval, you'll be find your MLflow username and password in your account. You need to add this to your code to track your results.
+Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to Jeroen Geerdink ([j.geerdink@zgt.nl](j.geerdink@zgt.nl)). Upon approval, you will be assigned your MLflow username and password in your account. You need to add this to your code to track your results.
 
 ### Test the upload pipeline with our sample code
 You can test the upload pipeline with our [sample code on toy dataset](./sample_code/toy-dataset).
-1. Login to your account on the platform. Copy your MLflow credentials (username and password) and add it in lines 26 and 27 of the [main.py](./sample_code/toy-dataset/main.py)
+1. Login to your account on the platform. Copy your MLflow credentials (username and password) and add it in lines 26 and 27 of [main.py](./sample_code/toy-dataset/main.py)
 2. zip ```main.py``` and ```requirements.txt```, e.g. as ```submission.zip```. Make sure that ```main.py``` and ```requirements.txt``` are in the root directory of the zip.
 3. Upload submission.zip on the platform.
-4. You will receive [email notification](#email-notification) with status of your submission and errors in code if encountered.
+4. You will receive an [email notification with status](#email-notification) of your submission and errors in code if encountered.
 5. Go to [mlflow.zgt.nl](mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
-6. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model. 
 
 ### Develop and test your code locally
-General key points for developing your code for CLaM:
+We suggest that you bootstrap development from the [sample code](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a [small subset](./dataset) in this repository. 
+
+However, if you would like to start from scratch, most important things to keep in mind when developing your code for CLaM are:
 1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code. How to access the dataset in your code can be found [here](./dataset.md). 
 3. The entrypoint of the code needs to be called ```main.py```.
 4. Provide all packages needed to run your code in ```requirements.txt``` ([generate requirements.txt](#generate-requirementstxt)). 
 5. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
 6. Log your output files and trained model in ```/mnt/export``` ([more explanation](#mlflow)). 
 7. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
-8. We provide a [sample code for breast cancer prediction](./sample_code/clam-dataset) on CLaM. Refer to that for guidance.<br/>
 
 
 Test your code locally on CLaM-sample in a similar docker environment as the one used in the platform.
