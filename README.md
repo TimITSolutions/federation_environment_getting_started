@@ -34,14 +34,14 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 6. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model. 
 
 ### Develop and test your code locally
-We provide a [sample code for breast cancer prediction](./sample_code/clam-dataset) on CLaM. Refer to that for guidance.<br/>
-General key points for developing your code for CLaM.:
-1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code. How to access the dataset within the code can be found [here](./dataset.md). 
+General key points for developing your code for CLaM:
+1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code. How to access the dataset in your code can be found [here](./dataset.md). 
 3. The entrypoint of the code needs to be called ```main.py```.
 4. Provide all packages needed to run your code in ```requirements.txt``` ([generate requirements.txt](#generate-requirementstxt)). 
 5. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
 6. Log your output files and trained model in ```/mnt/export``` ([more explanation](#mlflow)). 
 7. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
+8. We provide a [sample code for breast cancer prediction](./sample_code/clam-dataset) on CLaM. Refer to that for guidance.<br/>
 
 
 Test your code locally on CLaM-sample in a similar docker environment as the one used in the platform.
