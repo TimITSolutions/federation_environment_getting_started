@@ -1,17 +1,20 @@
 # CLaM Dataset
-<ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](https://fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/>   
+<ins>C</ins>ase-<ins>La</ins>belled <ins>M</ins>ammography (CLaM) dataset contains mammography exams from Ziekenhuis Groep Twente (ZGT), The Netherlands, taken between 2013 to 2020. Our complete CLaM dataset is stored at ZGT and is not downloadable or directly accessible, but can be used for training AI models through our [platform](https://fe.zgt.nl). Details of the dataset can be found in our paper (in progress). <br/> 
+The structure of the dataset is as follows:
 ```
 dataset
 | 
-+--CLaM-sample
++--CLaM
 |  |
 |  +--S1-A1
-|      |
-|      +--LCC
-|         |
-|         +--1.png
-|         +--1.npy
-|      +--LMLO
+|     |
+|     +--LCC
+|     |  |
+|     |  \--1.png
+|     |  \--1.npy
+|     +--LMLO
+|     |  |
+|     |  |
 +--clam-details-case.csv
 +--clam-details-image.csv 
 ```
