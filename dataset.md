@@ -26,6 +26,7 @@ The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar 
 
 ## csv files
 [clam-details-case.csv](./dataset/clam-details-case.csv): list of the cases and their corresponding case-level diagnosis of malignant and benign. The columns in the csv file are: 
+-------------------------------------------------------------------------------------------------------------
 |Patient_Id       | Unique id of the patient                                                                |
 |CaseName         | Name of a case or exam, e.g. S1-A1                                                      |
 |CasePath         | Path to the case, e.g. ./dataset/CLaM/S1-A1, then CasePath is CLaM/S1-A1                |
@@ -34,7 +35,7 @@ The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar 
 |Views            | mentions all views available for the case, including both standard and additional views |
 |Groundtruth      | Case-level or exam-level diagnosis of malignant or benign                               |
 |Split            | indicates whether the case is included in the train or test set.                        |
-
+-------------------------------------------------------------------------------------------------------------
 [clam-details-image.csv](./dataset/clam-details-image.csv): list of images in the cases.<br/>
 
 The CLaM dataset on the [platform](https://fe.zgt.nl) is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
