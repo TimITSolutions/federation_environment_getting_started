@@ -40,7 +40,8 @@ Develop your code for CLaM. Here's our [sample code for breast cancer prediction
 3. The entrypoint of the code needs to be called ```main.py```.
 4. Provide all packages needed to run your code in ```requirements.txt``` ([generate requirements.txt](#generate-requirementstxt)). 
 5. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
-6. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
+6. Log your output files and trained model in ```/mnt/export``` [more explanation](#mlflow). 
+7. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
 
 Test your code locally on CLaM-sample in a similar docker environment as the one used in the platform.
 1. Install [docker](./setup-docker.md).
@@ -55,9 +56,9 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 
 ### Submit your code to our platform
 1. Login to your account on our [platform](https://fe.zgt.nl). 
-2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 of the [sample code](./sample_code/clam-dataset/main.py)).
+2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. lines 302 and 303 of the [sample code](./sample_code/clam-dataset/main.py)).
 3. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**
-4. Change the names of the csv files: path to the dataset. 
+4. Change the names of the csv files of ClaM-sample to that of CLaM: ```clam-details-image.csv``` (csv file with image paths) and ```clam-details-csv``` (csv file with case paths).  
 6. Upload your code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl). Make sure that main.py and requirements.txt are in the root directory of the zip.
 7. Track your results through [mlflow.zgt.nl](https://mlflow.zgt.nl).
 8. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model or other log files.
