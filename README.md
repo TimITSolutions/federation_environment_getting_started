@@ -7,7 +7,7 @@ The [model-to-data platform](https://fe.zgt.nl) provides worldwide access to our
 
 <img src="data-access-platform.png" alt="platform-overview" style="height: 220px; width:800px;"/>
 
-What can you find in this repository <br/>
+What can you find in this repository? <br/>
 :star: Instructions to write your code, upload it to the platform and view the results. <br/>
 :star: Sample code on toy dataset (iris) to quickly test the upload pipeline. <br/>
 :star: Sample code for breast cancer prediction on CLaM dataset to kickstart your breast cancer code development. <br/>
