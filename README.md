@@ -31,14 +31,15 @@ You can test the upload pipeline with the sample code on toy dataset.
 6. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model. 
 
 ## Develop and test your code locally
-Develop your code. Here's our sample code for breast cancer prediction on CLaM to guide you.
+Develop your code for CLaM. Here's our sample code for breast cancer prediction on CLaM to guide you.
 1. Use subset of the CLaM dataset, [CLaM-sample](./datasets) in this repository to develop your code.
-2. The entrypoint of the code needs to be called ```main.py```.
-3. Provide all packages needed to run your code in ```requirements.txt```.
-4. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
-5. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
+2. How to access the dataset within the code can be found here. 
+3. The entrypoint of the code needs to be called ```main.py```.
+4. Provide all packages needed to run your code in ```requirements.txt```.
+5. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
+6. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
 
-Test your code locally using a similar docker environment as the one used in the platform.
+Test your code locally on CLaM-sample using a similar docker environment as the one used in the platform.
 1. Install [docker]().
 2. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of [datasets folder](./dataset).
 3. Place your ```submission.zip``` in ```docker_scripts/```.
@@ -53,8 +54,7 @@ Test your code locally using a similar docker environment as the one used in the
 1. Login to your account on our [platform](https://fe.zgt.nl). 
 2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. line 26 and 27 of the [sample code](./sample_code/main.py)).
 3. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**
-4. Change the path to the dataset. The CLaM dataset on the [platform](https://fe.zgt.nl) is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
-5. Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics()```. We have disabled saving artifacts on our MLflow server to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
+4. Change the names of the csv files: path to the dataset. 
 6. Upload your code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl). Make sure that main.py and requirements.txt are in the root directory of the zip.
 7. Track your results through [mlflow.zgt.nl](https://mlflow.zgt.nl).
 8. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model or other log files.
@@ -70,9 +70,10 @@ We provide 2 sample code to test [locally](./README.md#testing-your-code-locally
 - Add the correct config file in lines 61, 94 and 100. runs/run1/config_8.ini is for testing on the platform and runs/run2/config_8.ini is for testing locally.
 - Comment lines 295, 297 and 298 [here](https://github.com/ShreyasiPathak/case-level-breast-cancer-data-access/blob/main/setup/read_input_file.py) to train the model on the complete CLaM dataset.
 
-## Additional Information
+# Additional Information
 
+## MLflow
+Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics()```. We have disabled saving artifacts on our MLflow server to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
 
-
-### Email notification
+## Email notification
 the code received (the docker image is bulit after this, so it will take some time), queued for execution, execution started, and execution finished.
