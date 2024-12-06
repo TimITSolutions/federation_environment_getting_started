@@ -43,7 +43,7 @@ Develop your code for CLaM. Here's our [sample code for breast cancer prediction
 
 Test your code locally on CLaM-sample in a similar docker environment as the one used in the platform.
 1. Install [docker](./setup-docker.md).
-2. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of [datasets folder](./dataset).
+2. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of the [dataset folder](./dataset).
 3. Place your ```submission.zip``` in ```docker_scripts/```.
 4. Execute the docker compose environement: ```docker compose up```
 5. Track the results in mlflow through [http://localhost:3001/](http://localhost:3001/)
