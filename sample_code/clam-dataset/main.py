@@ -325,6 +325,7 @@ if __name__=='__main__':
     sys.stderr.close()
     sys.stdout = open(print_dir, 'w')
     sys.stderr = open(tqdm_dir, 'w')
+    
 
     # read input csv files
     csv_file_path = config_params['csvfilepath_image']
@@ -362,8 +363,8 @@ if __name__=='__main__':
     df_train = df_modality[df_modality['Split'] == 'train']
     df_test = df_modality[df_modality['Split'] == 'test']
 
-    df_train = df_train[100:140]
-    df_test = df_test[20:40]
+    df_train = df_train[100:150]
+    df_test = df_test[0:30]
     df_train = df_train.reset_index()
     df_test = df_test.reset_index()
     train_instances = df_train.shape[0]
