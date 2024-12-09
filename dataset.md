@@ -26,27 +26,27 @@ The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar 
 
 ## csv files
 [clam-details-case-extrainfo.csv](./dataset/clam-details-case-extrainfo.csv): list of the cases in the dataset and their corresponding case-level diagnosis of malignant and benign. The columns in the csv file are: 
-|Column name                    | Description                                                                             |
-|-------------------------------|-----------------------------------------------------------------------------------------|
-|Patient_Id                     | Unique id of the patient to whom the exam belongs.                                      |
-|CaseName                       | Name of a case or exam, e.g. S1-A1. Unique for each case.                               |
-|CasePath                       | Path to the case, e.g. ./dataset/CLaM/S1-A1, then CasePath is CLaM/S1-A1                |
-|Study_Description              | Description of the exam                                                                 |
-|Views_4                        | Only the standard views are mentioned                                                   | 
-|Views                          | mentions all views available for the case, including both standard and additional views |
-|BIRADS_combined_casebased      | BIRADS score from the mammography exam                                                  |
-|BIRADS_combined_pathwaybased   | BIRADS score from the complete diagnostic pathway of the patient                        |
-|BreastDensity_standardized     | Breast density of the patient                                                           |
-|Age                            | Age of the patient                                                                      |
-|Groundtruth                    | Case-level or exam-level diagnosis of malignant or benign                               |
-|Split                          | indicates whether the case is included in the train or test set.                        |
+|Column name                    | Description                                                                                      |
+|-------------------------------|--------------------------------------------------------------------------------------------------|
+|Patient_Id                     | Unique id of the patient to whom the exam belongs.                                               |
+|CaseName                       | Name of a case or exam, e.g. S1-A1. Unique for each case.                                        |
+|CasePath                       | Path to the case, e.g. ./dataset/CLaM/S1-A1, then CasePath is CLaM/S1-A1                         |
+|Study_Description              | Description of the exam                                                                          |
+|Views_4                        | Only the standard views are mentioned                                                            | 
+|Views                          | mentions all views available for the case, including both standard and additional views          |
+|BIRADS_combined_casebased      | BIRADS score from the mammography exam. Possible values: 0,1,2,3,4,5,6                           |
+|BIRADS_combined_pathwaybased   | BIRADS score from the complete diagnostic pathway of the patient. Possible values: 0,1,2,3,4,5,6 |
+|BreastDensity_standardized     | Breast density of the patient. Possible values: A, B, C, D                                       |
+|Age                            | Age of the patient                                                                               |
+|Groundtruth                    | Case-level or exam-level diagnosis of malignant or benign                                        |
+|Split                          | indicates whether the case is included in the train or test set.                                 |
 
 
 [clam-details-image.csv](./dataset/clam-details-image.csv): list of images in the cases. The columns in the csv file are as follows:<br/>
 |Column name      | Description                                                                                                         |
 |-----------------|---------------------------------------------------------------------------------------------------------------------|
 |Patient_Id       | Unique id of the patient to whom the exam belongs, e.g. P1, P2..                                                    |
-|CaseName         | Name of a case or exam, e.g. S1-A1. Unique for each case                                                           |
+|CaseName         | Name of a case or exam, e.g. S1-A1. Unique for each case                                                            |
 |CasePath         | Path to the case, e.g. ./dataset/CLaM/S1-A1, then CasePath is CLaM/S1-A1                                            |
 |ImagePath        | Path to each image in a case, e.g. for ./dataset/CLaM/S1-A1/LCC/1.png, the ImagePath is CLaM-sample/S1-A1/LCC/1.png |
 |Study_Description| Description of the exam                                                                                             |
