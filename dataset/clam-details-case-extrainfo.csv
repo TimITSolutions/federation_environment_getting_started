@@ -1,0 +1,11 @@
+Patient_Id;CaseName;CasePath;Study_Description;Views_4;Views;BIRADS_combined_casebased;BIRADS_combined_pathwaybased;BreastDensity_standardized;Age;Groundtruth;Split
+P1;S1-A1;CLaM-sample/S1-A1;Mammografie mammapoli beiderzijds;LCC+LMLO+RCC+RMLO;LCC+LMLO+RCC+RMLO;5;5;NULL;96.68371013778516;malignant;train
+P2;S2-A2;CLaM-sample/S2-A2;Mammografie beiderzijds;LCC+LMLO+RCC+RMLO;LCC+LMLO+RCC+RMLO;2;2;B;62.93079255563086;benign;train
+P3;S3-A3;CLaM-sample/S3-A3;Mammografie mammapoli beiderzijds;LCC+LMLO+RCC+RMLO;LCC+LMLO+RCC+RMLO;2;2;B;67.41274632607103;benign;train
+P4;S4-A4;CLaM-sample/S4-A4;Mammografie mammapoli beiderzijds;LCC+LMLO+RCC+RMLO;LCC+LMLO+RCC+RMLO;5;5;C;72.34645475266433;malignant;train
+P5;S5-A5;CLaM-sample/S5-A5;Mammografie beiderzijds;LCC+LMLO+RCC+RMLO;LCC+LMLO+LXCCL+RCC+RMLO;2;2;A;78.45472528525569;benign;train
+P6;S6-A6;CLaM-sample/S6-A6;Mammografie mammapoli beiderzijds;LCC+LMLO+RCC+RMLO;LCC+LMLO+LXCCL+RCC+RMLO;4b;6;NULL;64.24498791898533;malignant;train
+P7;S7-A7;CLaM-sample/S7-A7;Mammografie mammapoli beiderzijds;LCC+LMLO+RCC+RMLO;LCC+LLM+LMLO+RCC+RMLO;4b;6;D;37.2136320389878;malignant;train
+P8;S8-A8;CLaM-sample/S8-A8;Mammografie mammapoli beiderzijds;LCC+LMLO+RCC+RMLO;LCC+LMLO+RCC+RMLO+RXCCL;4;4;A;63.47837395702855;benign;test
+P9;S9-A9;CLaM-sample/S9-A9;Copie SVOB;LCC+LMLO+RCC+RMLO;LCC+LMLO+LXCCL+RCC+RMLO+RXCCL;NULL;6;NULL;53.33716640314312;malignant;test
+P10;S10-A10;CLaM-sample/S10-A10;Mammografie beiderzijds;LCC+LMLO+RCC+RMLO;LCC+LMLO+RCC+RMLO;1;1;B;69.96173774957734;benign;train
