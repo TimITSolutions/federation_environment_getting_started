@@ -31,6 +31,7 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 3. Upload submission.zip on the platform.
 4. You will receive an [email notification with status](#email-notification) of your submission and errors in code if encountered.
 5. Go to [mlflow.zgt.nl](mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
+6. On successful execution of the code, you will see accuracy = 1 and dataset-exists = 1 under metrics in mlflow.
 
 ### Develop and test your code locally
 We suggest that you bootstrap development from the [sample code](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a [small subset](./dataset) in this repository. 
