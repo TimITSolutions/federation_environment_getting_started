@@ -25,7 +25,7 @@ We provide a sample of the CLaM dataset, [CLaM-sample](./dataset) in this reposi
 The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar structure and can be accessed similarly.
 
 ## csv files
-[clam-details-case.csv](./dataset/clam-details-case.csv): list of the cases in the dataset and their corresponding case-level diagnosis of malignant and benign. The columns in the csv file are: 
+[clam-details-case-extrainfo.csv](./dataset/clam-details-case-extrainfo.csv): list of the cases in the dataset and their corresponding case-level diagnosis of malignant and benign. The columns in the csv file are: 
 |Column name                    | Description                                                                             |
 |-------------------------------|-----------------------------------------------------------------------------------------|
 |Patient_Id                     | Unique id of the patient to whom the exam belongs.                                      |
