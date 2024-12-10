@@ -366,15 +366,13 @@ if __name__=='__main__':
     df_case = pd.read_csv("/mnt/dataset/clam-details-case-extrainfo.csv", sep=';')
     print("test set shape:", df_test.shape)
     df_test = df_test.merge(df_case, on='CaseName', how='inner')
-    #print("dataframe columns:", df_test.columns)
     df_test = df_test.drop(['Patient_Id_y', 'CasePath_y', 'Study_Description_y', 'Views_y', 'Groundtruth_y', 'Split_y'], axis=1)
     df_test = df_test.rename(columns={'Patient_Id_x': 'Patient_Id', 'CasePath_x': 'CasePath', 'Study_Description_x': 'Study_Description', 'Views_x': 'Views', 'Split_x':'Split', 'Groundtruth_x': 'Groundtruth'})
     print("test set shape after merging with clam-details-case-extrainfo:", df_test.shape)
     print("test set:", df_test)
+    print("dataframe columns:", df_test.columns)
     
     # add your condition here.
-    #df_test = df_test[df_test['BIRADS_combined_casebased']=='4']
-    #print("test set shape after applying the condition:", df_test.shape)
 
     df_train = df_train.reset_index()
     df_test = df_test.reset_index()
