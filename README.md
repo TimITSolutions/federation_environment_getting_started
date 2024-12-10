@@ -37,7 +37,8 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 We suggest that you bootstrap development from our [sample code on CLaM dataset](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a [small subset](./dataset) in this repository. 
 
 However, if you would like to start from scratch, most important things to keep in mind when developing your code for CLaM are:
-1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code. How to access the dataset in your code can be found [here](./dataset.md). 
+1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code.
+2. CLaM dataset description and how to access the dataset in your code can be found [here](./dataset.md). 
 3. The entrypoint of the code needs to be called ```main.py```.
 4. Provide all packages needed to run your code in ```requirements.txt``` ([generate requirements.txt](#generate-requirementstxt)). 
 5. Log your performance metrics to MLflow using ```mlflow.log_metrics()```.
