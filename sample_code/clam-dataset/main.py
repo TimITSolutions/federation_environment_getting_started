@@ -273,7 +273,7 @@ def test(path_to_model, dataloader_test, numbatches_test, model):
 if __name__=='__main__':
     # input parameters for the code
     config_params = {'randseeddata': 8,
-                    'randseedother':8, 
+                    'randseedother': 8, 
                     'csvfilepath_image': '/mnt/dataset/clam-details-image.csv',
                     'preprocessed_imagepath': '/mnt/dataset',
                     'device': 'cuda:0', # cuda:0, cpu
@@ -292,8 +292,8 @@ if __name__=='__main__':
     # Create a new MLflow Experiment
     # set username and password through environment variables. 
     # This is needed for accessing the mlflow client when submitting your code to fe.zgt.nl.
-    username = 'sz1HX' #'your-username' #can be found when logging to fe.zgt.nl
-    password = 'f9UItViOfL' #'your-password' #can be found when logging to fe.zgt.nl
+    username = 'your-username' #'your-username' #can be found when logging to fe.zgt.nl
+    password = 'your-password' #'your-password' #can be found when logging to fe.zgt.nl
     
     os.environ["MLFLOW_TRACKING_USERNAME"] = username
     os.environ["MLFLOW_TRACKING_PASSWORD"] = password
@@ -327,6 +327,17 @@ if __name__=='__main__':
     df_modality['FullPath'] = config_params['preprocessed_imagepath'] + '/' + df_modality['ImagePath']
     df_modality['Groundtruth'] = df_modality['CaseLabel']
 
+    # merging of image csv file with case csv file to get the BIRADS score, breast density and age information for each image. 
+    # This is needed if you want to test on certain subgroups of the data, e.g. breast density A, B, C, D or
+    # birads 0,1,2,3,4,4a,4b,4c,5,6
+    df_case = pd.read_csv("/mnt/dataset/clam-details-case-extrainfo.csv", sep=';')
+    print("dataframe shape:", df_modality.shape)
+    df_modality = df_modality.merge(df_case, on='CaseName', how='inner')
+    df_modality = df_modality.drop(['Patient_Id_y', 'CasePath_y', 'Study_Description_y', 'Views_y', 'Groundtruth_y', 'Split_y'], axis=1)
+    df_modality = df_modality.rename(columns={'Patient_Id_x': 'Patient_Id', 'CasePath_x': 'CasePath', 'Study_Description_x': 'Study_Description', 'Views_x': 'Views', 'Split_x':'Split', 'Groundtruth_x': 'Groundtruth'})
+    print("test set shape after merging with clam-details-case-extrainfo:", df_modality.shape)
+    print("dataframe columns:", df_modality.columns)
+
     # result output
     path_to_results = config_params['path_to_output'] + '/' + 'results.xlsx'
     wb = Workbook()
@@ -359,20 +370,6 @@ if __name__=='__main__':
     if df_train.shape[0]>100:
         df_train = df_train[100:150]
         df_test = df_test[0:70]
-
-    # merging of image csv file with case csv file to get the BIRADS score, breast density and age information for each image. 
-    # This is needed if you want to test on certain subgroups of the data, e.g. breast density A, B, C, D or
-    # birads 0,1,2,3,4,4a,4b,4c,5,6
-    df_case = pd.read_csv("/mnt/dataset/clam-details-case-extrainfo.csv", sep=';')
-    print("test set shape:", df_test.shape)
-    df_test = df_test.merge(df_case, on='CaseName', how='inner')
-    df_test = df_test.drop(['Patient_Id_y', 'CasePath_y', 'Study_Description_y', 'Views_y', 'Groundtruth_y', 'Split_y'], axis=1)
-    df_test = df_test.rename(columns={'Patient_Id_x': 'Patient_Id', 'CasePath_x': 'CasePath', 'Study_Description_x': 'Study_Description', 'Views_x': 'Views', 'Split_x':'Split', 'Groundtruth_x': 'Groundtruth'})
-    print("test set shape after merging with clam-details-case-extrainfo:", df_test.shape)
-    print("test set:", df_test)
-    print("dataframe columns:", df_test.columns)
-    
-    # add your condition here.
 
     df_train = df_train.reset_index()
     df_test = df_test.reset_index()
