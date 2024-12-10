@@ -35,7 +35,7 @@ The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar 
 |CasePath                       | Path to the case                       | for ./dataset/CLaM/S1-A1, the CasePath is CLaM/S1-A1; datatype: string |
 |Study_Description              | Description of the exam                                                                          | datatype: string |
 |Views_4                        | All standard views in the case are mentioned.                                                    | A case containing LCC, LMLO, RCC and LXCCL would have a value LCC+LMLO+RCC in this column; datatype: string | 
-|Views                          | mentions all views available for the case, including both standard and additional views.          | A case containing LCC, LMLO, RCC an LXCCL would have LCC+LMLO+RCC+LXCCL in this column; datatype: string |
+|Views                          | mentions all views available for the case, including both standard and additional views.          | A case containing LCC, LMLO, RCC and LXCCL would have LCC+LMLO+RCC+LXCCL in this column; datatype: string |
 |BIRADS_combined_casebased      | BIRADS score from the mammography exam. | 0, 1, 2, 3, 4, 4a, 4b, 4c, 5, 6, NULL; datatype: string |
 |BIRADS_combined_pathwaybased   | BIRADS score from the complete diagnostic pathway of the patient.  | 0, 1, 2, 3, 4, 4a, 4b, 4c, 5, 6, NULL; datatype: string|
 |BreastDensity_standardized     | Breast density of the patient.                                        | A, B, C, D, NULL; data type: string |
