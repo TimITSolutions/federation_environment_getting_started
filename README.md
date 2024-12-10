@@ -64,7 +64,7 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 3. The **experiment name** of your MLflow experiment must be named **like your MLflow username**  
 4. Upload your zip code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl). Make sure that ```main.py``` and ```requirements.txt``` are in the root directory of the zip.
 5. Track your results through [mlflow.zgt.nl](https://mlflow.zgt.nl).
-6. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model or other log files.
+6. Send an email to [j.geerdink@zgt.nl](j.geerdink@zgt.nl) for receiving your trained model or other log files.
 
 ## Additional Information
 
