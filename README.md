@@ -34,7 +34,7 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 6. On successful execution of the code, you will see accuracy = 1 and dataset-exists = 1 under metrics in mlflow.
 
 ### Develop and test your code locally
-We suggest that you bootstrap development from the [sample code](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a [small subset](./dataset) in this repository. 
+We suggest that you bootstrap development from our [sample code on CLaM dataset](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a [small subset](./dataset) in this repository. 
 
 However, if you would like to start from scratch, most important things to keep in mind when developing your code for CLaM are:
 1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code. How to access the dataset in your code can be found [here](./dataset.md). 
