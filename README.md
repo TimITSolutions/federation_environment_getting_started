@@ -78,8 +78,8 @@ You will receive email notification with the status of your code.
 
 ### Generate requirements.txt
 
-- pip install pipreqs
-- pipreqs /path/to/project
+- ```pip install pipreqs```
+- ```pipreqs /path/to/project```
 
 ### Run SOTA case-level breast cancer model
 
