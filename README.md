@@ -16,13 +16,13 @@ What can you find in this repository? <br/>
 
 ## Getting started
 Clone this repository and follow the steps below to get started.
-1. [Sign-up on the platform](#sign-up-on-the-platform).
+1. [Sign-up on the platform](#sign-up-on-the-platform)
 2. [Test the upload pipeline with our sample code](#test-the-upload-pipeline-with-our-sample-code)
 3. [Develop and test your code locally](#develop-and-test-your-code-locally)
 4. [Submit your code to our platform](#submit-your-code-to-our-platform)
 
 ### Sign-up on the platform
-Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to Jeroen Geerdink ([j.geerdink@zgt.nl](j.geerdink@zgt.nl)). Upon approval, you will be assigned your MLflow username and password in your account. You need to add this to your code to track your results.
+Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to Jeroen Geerdink ([j.geerdink@zgt.nl](j.geerdink@zgt.nl)). Upon approval, you will be assigned an MLflow username and password in your account. You need to add this to your code to track your results.
 
 ### Test the upload pipeline with our sample code
 You can test the upload pipeline with our [sample code on toy dataset](./sample_code/toy-dataset).
@@ -31,6 +31,7 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 3. Upload submission.zip on the platform.
 4. You will receive an [email notification with status](#email-notification) of your submission and errors in code if encountered.
 5. Go to [mlflow.zgt.nl](mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
+6. On successful execution of the code, you will see accuracy = 1 and dataset-exists = 1 under metrics in mlflow.
 
 ### Develop and test your code locally
 We suggest that you bootstrap development from the [sample code](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a [small subset](./dataset) in this repository. 
@@ -48,7 +49,7 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 1. Install [docker](./setup-docker.md).
 2. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of the [dataset folder](./dataset).
 3. Place your ```submission.zip``` in ```docker_scripts/```.
-4. Execute the docker compose environement: ```docker compose up```
+4. Execute the docker compose environment: ```docker compose up```
 5. Track the results in mlflow through [http://localhost:3001/](http://localhost:3001/)
 
 **Test on a machine with a NVIDIA GPU**: Correct files are ```docker-compose.yaml``` and ```docker_scripts/execute_code```. This setup reflects the exact setup on our model-to-data platform. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) before running step (4) in order to run containers with GPU acceleration. <br/>
@@ -70,10 +71,10 @@ Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set 
 
 ### Email notification
 You will receive email notification with the status of your code. 
-- code received. The docker image is bulit after this, so it will take some time after this stage
-- queued for execution
-- execution started
-- execution finished or failed. If your code failed to run, then you will also get the error with the email notification.
+- ```code received```. The docker image is bulit after this, so it will take some time after this stage
+- ```queued for execution```
+- ```execution started```
+- ```execution finished or failed```. If your code failed to run, then you will also get the error with the email notification.
 
 ### Generate requirements.txt
 
