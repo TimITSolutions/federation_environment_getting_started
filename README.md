@@ -30,7 +30,7 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 2. zip ```main.py``` and ```requirements.txt```, e.g. as ```submission.zip```. Make sure that ```main.py``` and ```requirements.txt``` are in the root directory of the zip.
 3. Upload ```submission.zip``` on the platform.
 4. You will receive an [email notification with status](#email-notification) of your submission and errors in code if encountered.
-5. Go to [mlflow.zgt.nl](mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
+5. Go to [mlflow.zgt.nl](https://mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
 6. On successful execution of the code, you will see accuracy = 1 and dataset-exists = 1 under metrics in MLflow.
 
 ### Develop and test your code locally
