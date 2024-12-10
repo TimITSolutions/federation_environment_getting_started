@@ -16,7 +16,7 @@ What can you find in this repository? <br/>
 
 ## Getting started
 Clone this repository and follow the steps below to get started.
-1. [Sign-up on the platform](#sign-up-on-the-platform).
+1. [Sign-up on the platform](#sign-up-on-the-platform)
 2. [Test the upload pipeline with our sample code](#test-the-upload-pipeline-with-our-sample-code)
 3. [Develop and test your code locally](#develop-and-test-your-code-locally)
 4. [Submit your code to our platform](#submit-your-code-to-our-platform)
