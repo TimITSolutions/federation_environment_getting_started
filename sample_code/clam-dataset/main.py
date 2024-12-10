@@ -72,7 +72,6 @@ def collect_images_8bits(data):
     img_path = str(data['FullPath'])
     img = Image.open(img_path)
     img= img.convert('RGB')
-    breast_side = data['Views'][0]
     transformTen = transforms.ToTensor()
     img = transformTen(img)
     return img
@@ -81,7 +80,6 @@ def collect_images_12bits(data):
     img_path = str(data['FullPath'])
     img = np.load(img_path).astype(np.float32)
     img = np.repeat(img[:, :, np.newaxis], 3, axis=2)
-    breast_side = data['Views'][0]
     img/=4095
     img = torch.from_numpy(img.transpose((2, 0, 1))).contiguous()
     return img
@@ -147,7 +145,7 @@ def aggregate_performance_metrics(y_true, y_pred, y_prob):
 
 def classspecific_performance_metrics(config_params, y_true, y_pred):
     score_dict = classification_report(y_true, y_pred, labels=config_params['classes'], output_dict = True)
-    print(score_dict)
+    #print(score_dict)
     results_all = []
     flag=0
     for key in score_dict.keys():
@@ -159,7 +157,7 @@ def classspecific_performance_metrics(config_params, y_true, y_pred):
         else:
             results_all.append([key, score_dict[key]])
     
-    print(results_all)
+    print("class specific performance:", results_all)
     return results_all
 
 def write_results_classspecific(path_to_results, sheetname, results_all):
@@ -262,6 +260,8 @@ def test(path_to_model, dataloader_test, numbatches_test, model):
     # save metrics on test set
     per_model_metrics = aggregate_performance_metrics(test_labels_all.cpu().numpy(), test_pred_all.cpu().numpy(), output_all_ten.cpu().numpy())
     per_model_metrics = [running_loss_test] + per_model_metrics
+    print('Loss','PrecisionBin','PrecisionMicro','PrecisionMacro','RecallBin','RecallMicro','RecallMacro','F1Bin','F1Micro','F1macro','F1wtmacro','Acc','Cohens Kappa','AUC')
+    print("scores:", per_model_metrics)
     write_results_xlsx(path_to_results, 'test_results', per_model_metrics)
     results_classspecific = classspecific_performance_metrics(config_params, test_labels_all.cpu().numpy(), test_pred_all.cpu().numpy())
     write_results_classspecific(path_to_results, 'test_results', results_classspecific)
@@ -275,26 +275,19 @@ if __name__=='__main__':
     config_params = {'randseeddata': 8,
                     'randseedother':8, 
                     'csvfilepath_image': '/mnt/dataset/clam-details-image.csv',
-                    #'csvfilepath_image': 'C:/Users/PathakS/OneDrive - Universiteit Twente/PhD/projects/radiology breast cancer/papers submitted/data access paper/platform-evaluation/federation_environment_getting_started/dataset/clam-small-subset-deceased-image.csv',
                     'preprocessed_imagepath': '/mnt/dataset',
-                    #'preprocessed_imagepath': 'C:/Users/PathakS/OneDrive - Universiteit Twente/PhD/projects/radiology breast cancer/papers submitted/data access paper/platform-evaluation/federation_environment_getting_started/dataset',
                     'device': 'cuda:0', # cuda:0, cpu
                     'maxepochs': 2,
                     'path_to_output': '/mnt/export',
-                    #'path_to_output': 'C:/Users/PathakS/OneDrive - Universiteit Twente/PhD/projects/radiology breast cancer/papers submitted/data access paper/platform-evaluation/federation_environment_getting_started/sample_code/clam-dataset',
                     'batchsize': 2,
                     'resize':[224, 224],
                     'numclasses': 2,
                     'classes': [0, 1],
                     'numworkers': 0,
-                    'bitdepth': 8,
+                    'bitdepth': 8, # change to 12 for using 12 bit .npy files.
                     'lr': 0.00001,
                     'wtdecay':0.0001,
                     'groundtruthdic': {'benign': 0, 'malignant': 1}}
-    
-    #'csvfilepath_image': 'C:/Users/PathakS/OneDrive - Universiteit Twente/PhD/projects/radiology breast cancer/papers submitted/data access paper/platform-evaluation/federation_environment_getting_started/datasets/clam-small-subset-deceased-image.csv',
-    #'preprocessed_imagepath': 'C:/Users/PathakS/OneDrive - Universiteit Twente/PhD/projects/radiology breast cancer/papers submitted/data access paper/platform-evaluation/federation_environment_getting_started/datasets',
-    #'path_to_output': 'C:/Users/PathakS/OneDrive - Universiteit Twente/PhD/projects/radiology breast cancer/papers submitted/data access paper/platform-evaluation/federation_environment_getting_started/sample_code/clam-dataset',
 
     # Create a new MLflow Experiment
     # set username and password through environment variables. 
@@ -338,7 +331,7 @@ if __name__=='__main__':
     path_to_results = config_params['path_to_output'] + '/' + 'results.xlsx'
     wb = Workbook()
     sheet1 = wb.active
-    sheet1.title="train_val_results"
+    sheet1.title = "train_val_results"
     header = ['Epoch','lr','Avg Loss Train','Accuracy Train','F1macro Train','Recall Train','Speci Train']
     sheet1.append(header)
     sheet2 = wb.create_sheet('test_results') 
@@ -363,8 +356,26 @@ if __name__=='__main__':
     df_train = df_modality[df_modality['Split'] == 'train']
     df_test = df_modality[df_modality['Split'] == 'test']
 
-    df_train = df_train[100:150]
-    df_test = df_test[0:30]
+    if df_train.shape[0]>100:
+        df_train = df_train[100:150]
+        df_test = df_test[0:70]
+
+    # merging of image csv file with case csv file to get the BIRADS score, breast density and age information for each image. 
+    # This is needed if you want to test on certain subgroups of the data, e.g. breast density A, B, C, D or
+    # birads 0,1,2,3,4,4a,4b,4c,5,6
+    df_case = pd.read_csv("/mnt/dataset/clam-details-case-extrainfo.csv", sep=';')
+    print("test set shape:", df_test.shape)
+    df_test = df_test.merge(df_case, on='CaseName', how='inner')
+    #print("dataframe columns:", df_test.columns)
+    df_test = df_test.drop(['Patient_Id_y', 'CasePath_y', 'Study_Description_y', 'Views_y', 'Groundtruth_y', 'Split_y'], axis=1)
+    df_test = df_test.rename(columns={'Patient_Id_x': 'Patient_Id', 'CasePath_x': 'CasePath', 'Study_Description_x': 'Study_Description', 'Views_x': 'Views', 'Split_x':'Split', 'Groundtruth_x': 'Groundtruth'})
+    print("test set shape after merging with clam-details-case-extrainfo:", df_test.shape)
+    print("test set:", df_test)
+    
+    # add your condition here.
+    #df_test = df_test[df_test['BIRADS_combined_casebased']=='4']
+    #print("test set shape after applying the condition:", df_test.shape)
+
     df_train = df_train.reset_index()
     df_test = df_test.reset_index()
     train_instances = df_train.shape[0]
