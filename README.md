@@ -71,10 +71,10 @@ Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set 
 
 ### Email notification
 You will receive email notification with the status of your code. 
-- code received. The docker image is bulit after this, so it will take some time after this stage
-- queued for execution
-- execution started
-- execution finished or failed. If your code failed to run, then you will also get the error with the email notification.
+- ```code received```. The docker image is bulit after this, so it will take some time after this stage
+- ```queued for execution```
+- ```execution started```
+- ```execution finished or failed```. If your code failed to run, then you will also get the error with the email notification.
 
 ### Generate requirements.txt
 
