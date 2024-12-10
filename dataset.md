@@ -30,8 +30,8 @@ The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar 
 [clam-details-case-extrainfo.csv](./dataset/clam-details-case-extrainfo.csv): list of the cases in the dataset and their corresponding case-level diagnosis of malignant and benign. The columns in the csv file are: 
 |Column name                    | Description                                                                                      | Value |
 |-------------------------------|--------------------------------------------------------------------------------------------------|-------|
-|Patient_Id                     | Unique id of the patient to whom the exam belongs.                                  | P1, P2, .., PN; datatype: string|
-|CaseName                       | Name of a case or exam. Unique for each case                                  | S1-A1, S2-A2, .., SM-AP; datatype: string |
+|Patient_Id                     | Unique id of the patient to whom the exam belongs.                                  | P1, P2, .. ; datatype: string|
+|CaseName                       | Name of a case or exam. Unique for each case                                  | S1-A1, S2-A2, .. ; datatype: string |
 |CasePath                       | Path to the case                       | for ./dataset/CLaM/S1-A1, the CasePath is CLaM/S1-A1; datatype: string |
 |Study_Description              | Description of the exam                                                                          | datatype: string |
 |Views_4                        | All standard views in the case are mentioned.                                                    | A case containing LCC, LMLO, RCC and LXCCL would have a value LCC+LMLO+RCC in this column; datatype: string | 
