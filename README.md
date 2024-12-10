@@ -60,7 +60,7 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 
 ### Submit your code to our platform
 1. Login to your account on our [platform](https://fe.zgt.nl). 
-2. Copy your auto-generated **username** and **password** for MLflow into the ```main.py``` (e.g. lines 302 and 303 of the [sample code](./sample_code/clam-dataset/main.py)).
+2. Copy the mlflow **username** and **password** assigned to you in your account into the ```main.py``` (e.g. lines 302 and 303 of the [sample code](./sample_code/clam-dataset/main.py)).
 3. The **experiment name** of your MLflow experiment must be named **like your MLflow username**  
 4. Upload your zip code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl). Make sure that ```main.py``` and ```requirements.txt``` are in the root directory of the zip.
 5. Track your results through [mlflow.zgt.nl](https://mlflow.zgt.nl).
