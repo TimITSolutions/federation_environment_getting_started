@@ -15,7 +15,7 @@ dataset
 |  |  +--LMLO
 |  |  |  |
 |  |  |  |
-+--clam-details-case.csv
++--clam-details-case-extrainfo.csv
 +--clam-details-image.csv 
 ```
 
