@@ -28,8 +28,8 @@ The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar 
 
 ## csv files
 [clam-details-case-extrainfo.csv](./dataset/clam-details-case-extrainfo.csv): list of the cases in the dataset and their corresponding case-level diagnosis of malignant and benign. The columns in the csv file are: 
-|Column name                    | Description                                                                                      | Value |
-|-------------------------------|--------------------------------------------------------------------------------------------------|-------|
+|Column name                    | Description                                                                                      | Value                        |
+|-------------------------------|--------------------------------------------------------------------------------------------------|------------------------------|
 |Patient_Id                     | Unique id of the patient to whom the exam belongs.                                               | P1, P2, .. ; datatype: string|
 |CaseName                       | Name of a case or exam. Unique for each case                                                     | S1-A1, S2-A2, .. ; datatype: string |
 |CasePath                       | Path to the case                                                                                 | for ./dataset/CLaM/S1-A1, the CasePath is CLaM/S1-A1; datatype: string |
@@ -45,16 +45,16 @@ The CLaM dataset stored in our [platform](https://fe.zgt.nl) reflects a similar 
 
 
 [clam-details-image.csv](./dataset/clam-details-image.csv): list of images in the cases. The columns in the csv file are as follows:<br/>
-|Column name      | Description                                                                                                         |
-|-----------------|---------------------------------------------------------------------------------------------------------------------|
-|Patient_Id       | Unique id of the patient to whom the exam belongs, e.g. P1, P2.                                                    |
-|CaseName         | Name of a case or exam, e.g. S1-A1, S2-A2. Unique for each case.                                                            |
-|CasePath         | Path to the case, e.g. for ./dataset/CLaM/S1-A1, the CasePath is CLaM/S1-A1                                         |
-|ImagePath        | Path to each image in a case, e.g. for ./dataset/CLaM/S1-A1/LCC/1.png, the ImagePath is CLaM-sample/S1-A1/LCC/1.png |
-|Study_Description| Description of the exam                                                                                             |
-|Views            | view of the image. Possible values: LCC, LMLO, LML, LLM, LXCCL, RCC, RMLO, RML, RLM, RXCCL.                         |
-|CaseLabel        | Case-level diagnosis of malignant or benign assigned to each image in a case. Possible values: malignant or  benign.         |
-|Split            | indicates whether the image is included in the train or test set. A case assigned to the train/test set has all its images assigned to the same set. Possible values: train or test.|
+|Column name      | Description                                                                                                     | Value                        |
+|-----------------|-----------------------------------------------------------------------------------------------------------------|------------------------------|
+|Patient_Id       | Unique id of the patient to whom the exam belongs                                                               | P1, P2, .. ; datatype: string|
+|CaseName         | Name of a case or exam. Unique for each case.                                                                   | S1-A1, S2-A2, .. ; datatype: string|
+|CasePath         | Path to the case.                                                                                               | for ./dataset/CLaM/S1-A1, the CasePath is CLaM/S1-A1; datatype: string |
+|ImagePath        | Path to each image in a case.                                                                                   | for ./dataset/CLaM/S1-A1/LCC/1.png, the ImagePath is CLaM-sample/S1-A1/LCC/1.png; datatype: string |
+|Study_Description| Description of the exam                                                                                         | datatype: string |
+|Views            | view of the image.                                                                                              | LCC, LMLO, LML, LLM, LXCCL, RCC, RMLO, RML, RLM, RXCCL; datatype: string |
+|CaseLabel        | Case-level diagnosis of malignant or benign assigned to each image in a case.                                   | malignant, benign; datatype: string |
+|Split            | indicates whether the image is included in the train or test set. A case assigned to the train/test set has all its images assigned to the same set.| train, test; datatype: string |
 
 ## How to access CLaM on the platform
 The CLaM dataset on the [platform](https://fe.zgt.nl) is located under ```/mnt/dataset```. Each case can be accessed using the path ```/mnt/dataset``` + column name ```CasePath``` in ```/mnt/dataset/clam-details-case-extrainfo.csv``` and each image can be accessed using the path ```/mnt/dataset``` + column name ```ImagePath``` in ```/mnt/dataset/clam-details-image.csv```.
