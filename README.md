@@ -28,10 +28,10 @@ Sign-up on the platform. An admin will manually verify and approve your account,
 You can test the upload pipeline with our [sample code on toy dataset](./sample_code/toy-dataset).
 1. Login to your account on the platform. Copy your MLflow credentials (username and password) and add it in lines 26 and 27 of [main.py](./sample_code/toy-dataset/main.py)
 2. zip ```main.py``` and ```requirements.txt```, e.g. as ```submission.zip```. Make sure that ```main.py``` and ```requirements.txt``` are in the root directory of the zip.
-3. Upload submission.zip on the platform.
+3. Upload ```submission.zip``` on the platform.
 4. You will receive an [email notification with status](#email-notification) of your submission and errors in code if encountered.
 5. Go to [mlflow.zgt.nl](mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
-6. On successful execution of the code, you will see accuracy = 1 and dataset-exists = 1 under metrics in mlflow.
+6. On successful execution of the code, you will see accuracy = 1 and dataset-exists = 1 under metrics in MLflow.
 
 ### Develop and test your code locally
 We suggest that you bootstrap development from our [sample code on CLaM dataset](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a [small subset](./dataset) in this repository. 
@@ -40,9 +40,9 @@ However, if you would like to start from scratch, most important things to keep 
 1. Use subset of the CLaM dataset, [CLaM-sample](./dataset) in this repository to develop your code. How to access the dataset in your code can be found [here](./dataset.md). 
 3. The entrypoint of the code needs to be called ```main.py```.
 4. Provide all packages needed to run your code in ```requirements.txt``` ([generate requirements.txt](#generate-requirementstxt)). 
-5. Log your performance metrics to mlflow using ```mlflow.log_metrics()```.
+5. Log your performance metrics to MLflow using ```mlflow.log_metrics()```.
 6. Log your output files and trained model in ```/mnt/export``` ([more explanation](#mlflow)). 
-7. Set the mlflow tracking url to [http://localhost:3001/](http://localhost:3001/).
+7. Set the MLflow tracking url to [http://localhost:3001/](http://localhost:3001/).
 
 
 Test your code locally on CLaM-sample in a similar docker environment as the one used in the platform.
@@ -50,7 +50,7 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 2. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of the [dataset folder](./dataset).
 3. Place your ```submission.zip``` in ```docker_scripts/```.
 4. Execute the docker compose environment: ```docker compose up```
-5. Track the results in mlflow through [http://localhost:3001/](http://localhost:3001/)
+5. Track the results in MLflow through [http://localhost:3001/](http://localhost:3001/)
 
 **Test on a machine with a NVIDIA GPU**: Correct files are ```docker-compose.yaml``` and ```docker_scripts/execute_code```. This setup reflects the exact setup on our model-to-data platform. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) before running step (4) in order to run containers with GPU acceleration. <br/>
 
@@ -58,9 +58,9 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 
 ### Submit your code to our platform
 1. Login to your account on our [platform](https://fe.zgt.nl). 
-2. Copy your auto-generated **username** and **password** for MLFlow into the ```main.py``` (e.g. lines 302 and 303 of the [sample code](./sample_code/clam-dataset/main.py)).
-3. The **experiment name** of your MLFLOW experiment must be named **like your MLFLOW username**  
-4. Upload your zip code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl). Make sure that main.py and requirements.txt are in the root directory of the zip.
+2. Copy your auto-generated **username** and **password** for MLflow into the ```main.py``` (e.g. lines 302 and 303 of the [sample code](./sample_code/clam-dataset/main.py)).
+3. The **experiment name** of your MLflow experiment must be named **like your MLflow username**  
+4. Upload your zip code, i.e. ```submission.zip``` to our [platform](https://fe.zgt.nl). Make sure that ```main.py``` and ```requirements.txt``` are in the root directory of the zip.
 5. Track your results through [mlflow.zgt.nl](https://mlflow.zgt.nl).
 6. Send an email to [s.pathak@utwente.nl](s.pathak@utwente.nl) for receiving your trained model or other log files.
 
