@@ -20,7 +20,7 @@ dataset
 ```
 
 ## Example data
-We provide a sample of the CLaM dataset, [CLaM-sample](./dataset) in this repository for users to prepare their code that can work on the CLaM dataset. CLaM-sample contains 10 cases or mammography exams (S01-A01, S02-A02, ..) from 10 patients (P01, P02, ...). A mammography exam/case contains images of standard views from left (L) and right (R) breast - LMLO, LCC, RMLO and RCC and can also contain additional views - LXCCL, RXCCL, LLM, RLM, LML, RML. 
+We provide a sample of the CLaM dataset, [CLaM-sample](./dataset) in this repository for users to prepare their code that can work on the CLaM dataset. CLaM-sample contains 10 mammography exams or cases (S1-A1, S2-A2, ..) from 10 patients (P1, P2, ...). A mammography exam/case contains images of standard views, namely, mediolateral oblique (MLO) and craniocaudal (CC) from left (L) and right (R) breast, resulting in LMLO, LCC, RMLO and RCC images. The mammography exams can also contain additional views, namely, exaggerated craniocaudal view (XCCL), lateromedial (LM), mediolateral (ML), resulting in LXCCL, RXCCL, LLM, RLM, LML and RML images. 
 
 Each image folder, e.g. S01-A01/LMLO contains 2 images - 1.png (image in 8 bit) and 1.npy (image in 12 bit). 
 
