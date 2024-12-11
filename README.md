@@ -40,7 +40,7 @@ We suggest that you bootstrap development from our [sample code on CLaM dataset]
 
 **Start from your own code and make it suitable for CLaM dataset and the platform**
 
-However, if you would like to start from scratch, most important things to keep in mind when developing your code for CLaM are:
+If you would like to start from scratch, most important things to keep in mind when developing your code for CLaM are:
 1. Use [CLaM-sample](./dataset) in this repository to develop your code.
 2. CLaM dataset description and how to access the dataset in your code can be found [here](./dataset/dataset.md). 
 3. The entrypoint of the code needs to be called ```main.py```.
