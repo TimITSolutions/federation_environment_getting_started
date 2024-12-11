@@ -69,7 +69,7 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 ## Additional Information
 
 ### MLflow
-Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics()```. We have disabled saving artifacts on our MLflow server to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
+Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics(dict)``` or ```mlflow.log_metric(metric_name, metric_value)```. We have disabled saving artifacts on our MLflow server to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
 
 ### Email notification
 You will receive email notification with the status of your code. 
