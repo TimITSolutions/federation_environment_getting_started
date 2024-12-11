@@ -53,7 +53,7 @@ If you would like to start from scratch, most important things to keep in mind w
 
 Test your code locally on CLaM-sample in a similar docker environment as the one used in the platform.
 1. Install [docker](./setup-docker.md).
-2. The default docker files assume a NVIDIA GPU is available. For testing on your local machine without a NVIDIA GPU, follow this step. 
+2. The default docker setup here assumes a NVIDIA GPU is available. For testing on your local machine without a NVIDIA GPU, [follow this step](#testing-locally-on-machine-with-or-without-nvidia-gpu). 
 3. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of the [dataset folder](./dataset).
 4. Place your ```submission.zip``` in ```docker_scripts/```.
 5. Execute the docker compose environment: ```docker compose up```
