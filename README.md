@@ -33,9 +33,11 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 5. Go to [mlflow.zgt.nl](https://mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
 6. On successful execution of the code, you will see accuracy = 1 and dataset-exists = 1 under metrics in MLflow.
 
-### Develop and test your code locally
+### Develop your code
+**Start from our sample code on CLaM dataset**
 We suggest that you bootstrap development from our [sample code on CLaM dataset](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a small subset of CLaM, [CLaM-sample](./dataset) in this repository. 
 
+**Start from your own code and make it suitable for CLaM dataset and the platform**
 However, if you would like to start from scratch, most important things to keep in mind when developing your code for CLaM are:
 1. Use [CLaM-sample](./dataset) in this repository to develop your code.
 2. CLaM dataset description and how to access the dataset in your code can be found [here](./dataset/dataset.md). 
@@ -45,18 +47,18 @@ However, if you would like to start from scratch, most important things to keep 
 6. Log your output files and trained model in ```/mnt/export``` ([more explanation](#mlflow)). 
 7. Set the MLflow tracking url to [http://localhost:3001/](http://localhost:3001/).
 
+### Test your code locally
 
 Test your code locally on CLaM-sample in a similar docker environment as the one used in the platform.
 1. Install [docker](./setup-docker.md).
-2. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of the [dataset folder](./dataset).
-3. Place your ```submission.zip``` in ```docker_scripts/```.
-4. Execute the docker compose environment: ```docker compose up```
-5. Track the results in MLflow through [http://localhost:3001/](http://localhost:3001/)
-6. Error during local testing? [Refer to this page for some useful tips](useful-docker-commands.md).
+2. The default docker files assume a NVIDIA GPU is available. For testing on your local machine without a NVIDIA GPU, follow this step. 
+3. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of the [dataset folder](./dataset).
+4. Place your ```submission.zip``` in ```docker_scripts/```.
+5. Execute the docker compose environment: ```docker compose up```
+6. Track the results in MLflow through [http://localhost:3001/](http://localhost:3001/)
+7. Error during local testing? [Refer to this page for some useful tips](useful-docker-commands.md).
 
-**Test on a machine with a NVIDIA GPU**: Correct files are ```docker-compose.yaml``` and ```docker_scripts/execute_code```. This setup reflects the exact setup on our model-to-data platform. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) before running step (4) in order to run containers with GPU acceleration. <br/>
 
-**Test on a machine without a NVIDIA GPU**: Correct files are ```docker-compose-without-gpu.yaml``` and ```docker_scripts/execute_code-without-gpu```. Rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before running step (4) below. <br/>
 
 ### Submit your code to our platform
 1. Login to your account on our [platform](https://fe.zgt.nl). 
@@ -67,6 +69,11 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 6. Send an email to [j.geerdink@zgt.nl](j.geerdink@zgt.nl) for receiving your trained model or other log files.
 
 ## Additional Information
+
+### Testing locally on machine with or without NVIDIA GPU
+Test on a machine **with a NVIDIA GPU**: Correct files are ```docker-compose.yaml``` and ```docker_scripts/execute_code```. This setup reflects the exact setup on our model-to-data platform. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) before running step (4) in order to run containers with GPU acceleration. <br/>
+
+Test on a machine **without a NVIDIA GPU**: Correct files are ```docker-compose-without-gpu.yaml``` and ```docker_scripts/execute_code-without-gpu```. Rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before running step (4) below. <br/>
 
 ### MLflow
 Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics(dict)``` or ```mlflow.log_metric(metric_name, metric_value)```. We have disabled saving artifacts on our MLflow server to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
