@@ -33,7 +33,8 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 5. Go to [mlflow.zgt.nl](https://mlflow.zgt.nl) to track the progress of your experiment (after you received the email notification that execution has started).
 6. On successful execution of the code, you will see accuracy = 1 and dataset-exists = 1 under metrics in MLflow.
 
-### Develop your code
+### Develop and test your code locally
+#### Develop
 **Start from our sample code on CLaM dataset**
 
 We suggest that you bootstrap development from our [sample code on CLaM dataset](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a small subset of CLaM, [CLaM-sample](./dataset) in this repository. 
@@ -49,7 +50,7 @@ If you would like to start from scratch, most important things to keep in mind w
 6. Log your output files and trained model in ```/mnt/export``` ([more explanation](#mlflow)). 
 7. Set the MLflow tracking url to [http://localhost:3001/](http://localhost:3001/).
 
-### Test your code locally
+#### Test your code locally
 
 Test your code locally on CLaM-sample in a similar docker environment as the one used in the platform.
 1. Install [docker](./setup-docker.md).
