@@ -284,7 +284,7 @@ if __name__=='__main__':
                     'numclasses': 2,
                     'classes': [0, 1],
                     'numworkers': 0,
-                    'bitdepth': 8, # change to 12 for using 12 bit .npy files.
+                    'bitdepth': 12, # change to 12 for using 12 bit .npy files.
                     'lr': 0.00001,
                     'wtdecay':0.0001,
                     'groundtruthdic': {'benign': 0, 'malignant': 1}}
@@ -324,7 +324,10 @@ if __name__=='__main__':
     csv_file_path = config_params['csvfilepath_image']
     df_modality = pd.read_csv(csv_file_path, sep=';')
     print("df modality shape:", df_modality.shape)
-    df_modality['FullPath'] = config_params['preprocessed_imagepath'] + '/' + df_modality['ImagePath']
+    if config_params['bitdepth'] == 8:
+        df_modality['FullPath'] = config_params['preprocessed_imagepath'] + '/' + df_modality['ImagePath']
+    elif config_params['bitdepth'] == 12:
+        df_modality['FullPath'] = config_params['preprocessed_imagepath'] + '/' + df_modality['ImagePath'].str.split('.png').str[0] + '.npy'
     df_modality['Groundtruth'] = df_modality['CaseLabel']
 
     # merging of image csv file with case csv file to get the BIRADS score, breast density and age information for each image. 
