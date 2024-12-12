@@ -5,9 +5,10 @@ services:
       dockerfile: mlflow
       context: docker_scripts
     container_name: mlflow_server
-    network_mode: "host"
     working_dir: /app
     command: mlflow server --default-artifact-root /tmp/ --no-serve-artifacts --host 0.0.0.0 --port 3001 
+    ports:
+      - "3001:3001" 
 
   submission_run:
     build: 
@@ -28,7 +29,7 @@ services:
       - mlflow-server
     volumes:
       - export:/mnt/export/
-      - '/home/dataset:/mnt/dataset/' #replace the left side of the colon with your local path to the CLaM dataset, e.g. if your local path is: /home/datasets/CLaM-sample, then use /home/datasets
+      - '/home/dataset:/mnt/dataset/' #replace the left side of the colon with your local path to the CLaM dataset, e.g. if your local path is: /home/dataset/CLaM-sample, then use /home/dataset
 
 volumes:
   export:
