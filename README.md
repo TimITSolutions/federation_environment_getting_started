@@ -17,14 +17,14 @@ What can you find in this repository? <br/>
 ## Getting started
 Clone this repository and follow the steps below to get started.
 1. [Sign-up on the platform](#sign-up-on-the-platform)
-2. [Test the upload pipeline with our sample code](#test-the-upload-pipeline-with-our-sample-code)
+2. [Test the upload pipeline with our sample code on toy dataset](#test-the-upload-pipeline-with-our-sample-code)
 3. [Develop and test your code locally](#develop-and-test-your-code-locally)
 4. [Submit your code to our platform](#submit-your-code-to-our-platform)
 
 ### Sign-up on the platform
 Sign-up on the platform. An admin will manually verify and approve your account, which can take a bit of time. If you don't get a response within 3 working days, reach out to Jeroen Geerdink ([j.geerdink@zgt.nl](j.geerdink@zgt.nl)). Upon approval, you will be assigned an MLflow username and password in your account. You need to add this to your code to track your results.
 
-### Test the upload pipeline with our sample code
+### Test the upload pipeline with our sample code on toy dataset
 You can test the upload pipeline with our [sample code on toy dataset](./sample_code/toy-dataset).
 1. Login to your account on the platform. Copy your MLflow credentials (username and password) and add it in lines 26 and 27 of [main.py](./sample_code/toy-dataset/main.py)
 2. zip ```main.py``` and ```requirements.txt```, e.g. as ```submission.zip```. **Make sure that ```main.py``` and ```requirements.txt``` are in the root directory of the zip.**
@@ -76,7 +76,7 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 ### Testing locally on machine with or without NVIDIA GPU
 Test on a machine **with a NVIDIA GPU**: Correct files are ```docker-compose.yaml``` and ```docker_scripts/execute_code```. This setup reflects the exact setup on our model-to-data platform. Set up the Nvidia container toolkit on [Ubuntu](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) or [Windows](https://developer.nvidia.com/cuda/wsl) before running step (4) in order to run containers with GPU acceleration. <br/>
 
-Test on a machine **without a NVIDIA GPU**: Correct files are ```docker-compose-without-gpu.yaml``` and ```docker_scripts/execute_code-without-gpu```. Rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before running step (4) below. <br/>
+Test on a machine **without a NVIDIA GPU**: Correct files are ```docker-compose-without-gpu.yaml``` and ```docker_scripts/execute_code-without-gpu```. Rename them to ```docker-compose.yaml``` and ```docker_scripts/execute_code``` before proceeding. <br/>
 
 ### MLflow
 Log your performance metrics (accuracy, F1, AUC etc.) on the train and test set and also track the progress of model training at each epoch with MLflow, ```mlflow.log_metrics(dict)``` or ```mlflow.log_metric(metric_name, metric_value)```. We have disabled saving artifacts on our MLflow server to protect the privacy of our dataset. Thus, you will not be able to save your trained model to MLflow. However, you can write logs, other data and save trained models to ```/mnt/export/```. An admin can later access this volume and share the data with you on your request.
