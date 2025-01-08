@@ -327,7 +327,7 @@ if __name__=='__main__':
     if config_params['bitdepth'] == 8:
         df_modality['FullPath'] = config_params['preprocessed_imagepath'] + '/' + df_modality['ImagePath']
     elif config_params['bitdepth'] == 12:
-        df_modality['FullPath'] = config_params['preprocessed_imagepath'] + '/' + df_modality['ImagePath'].str.split('.png').str[0] + '.npy'
+        df_modality['FullPath'] = config_params['preprocessed_imagepath'] + '/' + df_modality['ImagePath'].str.split('.png', regex=False).str[0] + '.npy'
     df_modality['Groundtruth'] = df_modality['CaseLabel']
 
     # merging of image csv file with case csv file to get the BIRADS score, breast density and age information for each image. 
