@@ -35,7 +35,7 @@ You can test the upload pipeline with our [sample code on toy dataset](./sample_
 
 ### Develop and test your code locally
 #### Develop
-**Start from our sample code on CLaM dataset**
+##### Start from our sample code on CLaM dataset
 
 We suggest that you bootstrap development from our [sample code on CLaM dataset](./sample_code/clam-dataset). This sample code can seamlessly be tested locally and submitted to the platform. It trains a standard ResNet for breast cancer prediction at the image-level on our CLaM dataset. For local testing, we included a small subset of CLaM, [CLaM-sample](./dataset) in this repository. 
 
