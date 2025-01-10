@@ -47,7 +47,7 @@ If you would like to start from scratch, most important things to keep in mind w
 4. Provide all packages needed to run your code in ```requirements.txt``` ([generate requirements.txt](#generate-requirementstxt)). 
 5. Log your performance metrics to MLflow using ```mlflow.log_metrics()```.
 6. Log your output files and trained model in ```/mnt/export``` ([more explanation](#mlflow)). 
-7. Set the MLflow tracking url to [http://localhost:3001/](http://localhost:3001/).
+7. Set the MLflow tracking url to [http://mlflow-server:3001/](http://mlflow-server:3001/). This URI will point to the mlflow instance inside the provided environment.
 
 #### Test your code locally
 
