@@ -5,16 +5,20 @@ services:
       dockerfile: mlflow
       context: docker_scripts
     container_name: mlflow_server
-    network_mode: "host"
     working_dir: /app
     command: mlflow server --default-artifact-root /tmp/ --no-serve-artifacts --host 0.0.0.0 --port 3001 
+    networks:
+      - backend
+    ports:
+      - "3001:3001" 
 
   submission_run:
     build: 
       dockerfile: execute_code 
       context: docker_scripts
     container_name: code_submission 
-    network_mode: "host"
+    networks:
+      - backend
     working_dir: /app
     command: python3 main.py
     depends_on:
@@ -25,3 +29,7 @@ services:
 
 volumes:
   export:
+
+networks:
+  backend:
+    driver: bridge

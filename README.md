@@ -56,7 +56,7 @@ Test your code locally on CLaM-sample in a similar docker environment as the one
 2. The default docker setup here assumes a NVIDIA GPU is available. For testing on your local machine without a NVIDIA GPU, [follow this step](#testing-locally-on-machine-with-or-without-nvidia-gpu). 
 3. Update ```docker-compose.yaml```: replace ```/home/dataset``` in line 31 with your local path of the [dataset folder](./dataset).
 4. Place your ```submission.zip``` in ```docker_scripts/```.
-5. Execute the docker compose environment: ```docker compose up```
+5. Execute the docker compose environment: ```docker compose up --build```
 6. Track the results in MLflow through [http://localhost:3001/](http://localhost:3001/)
 7. Error during local testing? [Refer to this page for some useful tips](useful-docker-commands.md).
 

@@ -299,7 +299,7 @@ if __name__=='__main__':
     os.environ["MLFLOW_TRACKING_PASSWORD"] = password
     
     # Set our tracking server uri for logging
-    mlflow.set_tracking_uri(uri="http://localhost:3001")
+    mlflow.set_tracking_uri(uri="http://mlflow-server:3001")
     
     mlflow.set_experiment(username)
 

@@ -7,6 +7,8 @@ services:
     container_name: mlflow_server
     working_dir: /app
     command: mlflow server --default-artifact-root /tmp/ --no-serve-artifacts --host 0.0.0.0 --port 3001 
+    networks:
+      - backend
     ports:
       - "3001:3001" 
 
@@ -15,7 +17,8 @@ services:
       dockerfile: execute_code 
       context: docker_scripts
     container_name: code_submission 
-    network_mode: "host"
+    networks:
+      - backend
     working_dir: /app
     deploy:
       resources:
@@ -33,3 +36,7 @@ services:
 
 volumes:
   export:
+
+networks:
+  backend:
+    driver: bridge
